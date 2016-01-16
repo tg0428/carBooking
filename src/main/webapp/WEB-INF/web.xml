@@ -44,32 +44,21 @@
 	</filter-mapping>
 
 	<!-- Spring MVC前端处理器 -->
+	<!-- DispatcherServlet, Spring MVC的核心 -->
 	<servlet>
-		<servlet-name>Dispatcher Servlet</servlet-name>
+		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- DispatcherServlet对应的上下文配置， 默认为/WEB-INF/$servlet-name$-servlet.xml -->
 		<init-param>
-			<description>Spring MVC定义Bean文件，该文件为空配置，所有配置交给上级WebApplicationContext来处理</description>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/servlet-empty-context.xml</param-value>
+			<param-value>/WEB-INF/configs/spring/mvc-dispatcher-servlet.xml</param-value>
 		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Dispatcher Servlet</servlet-name>
-		<url-pattern>*.html</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>Dispatcher Servlet2</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<description>Spring MVC定义Bean文件，该文件为空配置，所有配置交给上级WebApplicationContext来处理</description>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/servlet-empty-context2.xml</param-value>
-		</init-param>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Dispatcher Servlet2</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<!-- mvc-dispatcher拦截所有的请求 -->
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

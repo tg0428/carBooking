@@ -28,13 +28,6 @@
 						<value>application/json;charset=UTF-8</value>
 					</list>
 				</property>
-				<!-- property name="actions">
-					<map>						
-						<entry key="stringQuoteCheck">
-							<bean class="org.beetl.json.util.StringQuoteCheck" />
-						</entry>
-					</map>
-				</property-->
 				<property name="policys">
 					<map>						
 						<entry key="~L/java.lang.String/" value="!quote" />
@@ -50,7 +43,7 @@
 <!-- 第一个GroupTemplate，模板放在Webapp下 -->
 	<bean name="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init">
 		<property name="configFileResource" value="/WEB-INF/beetl.properties"/>
-		<property name="functions">
+		<!-- <property name="functions">
 		     <map>
 		       <entry key="testFunction" value-ref="testFunction"/>
 		    </map> 
@@ -68,16 +61,16 @@
 		    	<entry key="html.output2" value-ref="testTagFactory2"/>		    
 		    </map> 
 		    
-  		 </property>
+  		 </property> -->
   		 
 	</bean>
 	
-	<bean name="testTagFactory" class="org.beetl.ext.spring.SpringBeanTagFactory">
+	<!-- <bean name="testTagFactory" class="org.beetl.ext.spring.SpringBeanTagFactory">
     	 <property name="name" value="testTag"/>
 	 </bean>
 	 <bean name="testTagFactory2" class="org.beetl.ext.spring.SpringBeanTagFactory">
     	 <property name="name" value="testTag2"/>
-	 </bean>
+	 </bean> -->
 	
 	<bean name="cmsbeetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init">
 		<property name="configFileResource" value="/WEB-INF/cms-beetl.properties"/>
