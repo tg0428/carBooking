@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:annotation-config />
+	
+	<context:component-scan base-package="org.wg.carbooking">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	<context:property-placeholder location="classpath*:jdbc.properties" />
+
+	<!--配置c3p0连接池  -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverClass}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	
+	<!--配置事物管理器  -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	
+	<!-- 配置事务特性 ，配置add、delete和update开始的方法，事务传播特性为required -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="Add*" propagation="REQUIRED" />
+            <tx:method name="Delete*" propagation="REQUIRED" />
+            <tx:method name="Update*" propagation="REQUIRED" />
+            <tx:method name="Login*" propagation="REQUIRED" />
+            <tx:method name="Regist*" propagation="REQUIRED" />
+            <tx:method name="*" read-only="true" />
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置那些类的方法进行事务管理 -->
+    <aop:config>
+        <aop:pointcut id="allManagerMethod" expression="execution (* org.wg.carbooking.service.*.*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="allManagerMethod" />
+    </aop:config>
+	
+</beans>

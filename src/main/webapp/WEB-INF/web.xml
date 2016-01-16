@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <display-name>carBooking</display-name>
+	<!-- Spring Web ApplicationContext配置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/configs/spring/applicationContext*.xml
+		</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 编码过滤器 -->
+	<filter>
+		<filter-name>Character Encoding Filter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<description>指定字符编码编码</description>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<description>是否强制要求响应包编码与请求包相同，false表示如果响应包设置了自己编码则不强制修改</description>
+			<param-name>forceEncoding</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Character Encoding Filter</filter-name>
+		<servlet-name>Dispatcher Servlet</servlet-name>
+	</filter-mapping>
+
+	<!-- 请求日志过滤器，调试用 -->
+	<filter>
+		<filter-name>Commons Request Logging Filter</filter-name>
+		<filter-class>org.springframework.web.filter.CommonsRequestLoggingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Commons Request Logging Filter</filter-name>
+		<servlet-name>Dispatcher Servlet</servlet-name>
+	</filter-mapping>
+
+	<!-- Spring MVC前端处理器 -->
+	<servlet>
+		<servlet-name>Dispatcher Servlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<description>Spring MVC定义Bean文件，该文件为空配置，所有配置交给上级WebApplicationContext来处理</description>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/servlet-empty-context.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dispatcher Servlet</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Dispatcher Servlet2</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<description>Spring MVC定义Bean文件，该文件为空配置，所有配置交给上级WebApplicationContext来处理</description>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/servlet-empty-context2.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dispatcher Servlet2</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
