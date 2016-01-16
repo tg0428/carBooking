@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<!-- 本文件由Spring MVC DispatcherServlet加载 -->
+	<!-- 请勿向本文件添加内容，MVC相关的配置请设置到mvc-context.xml文件中 -->
+ </beans>
