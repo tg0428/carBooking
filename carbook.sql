@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-01-18 15:43:59
+Date: 2016-01-18 18:02:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,7 +40,9 @@ CREATE TABLE `dbo.article` (
   `article_content` text COMMENT '文章内容',
   `article_time` varchar(255) DEFAULT NULL COMMENT '文章发布时间',
   `article_type` int(2) DEFAULT NULL,
-  PRIMARY KEY (`article_id`)
+  PRIMARY KEY (`article_id`),
+  KEY `article2type` (`article_type`),
+  CONSTRAINT `article2type` FOREIGN KEY (`article_type`) REFERENCES `dbo.typeofarticle` (`article_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -60,7 +62,9 @@ CREATE TABLE `dbo.car` (
   `image_url` varchar(255) DEFAULT NULL COMMENT '汽车图片路径',
   `car_type` int(2) DEFAULT NULL COMMENT '汽车优惠类型',
   `tips` varchar(255) DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (`car_id`)
+  PRIMARY KEY (`car_id`),
+  KEY `car2type` (`car_type`),
+  CONSTRAINT `car2type` FOREIGN KEY (`car_type`) REFERENCES `dbo.typeofcar` (`type_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -113,7 +117,9 @@ CREATE TABLE `dbo.user` (
   `gb_car_time` varchar(30) DEFAULT NULL COMMENT '还车日期',
   `book_car_id` int(3) DEFAULT NULL COMMENT '预定车辆id',
   `tips` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user2car` (`book_car_id`),
+  CONSTRAINT `user2car` FOREIGN KEY (`book_car_id`) REFERENCES `dbo.car` (`car_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
