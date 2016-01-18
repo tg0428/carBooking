@@ -4,8 +4,8 @@ import org.wg.carbooking.model.carbook;
 
 public interface carBookDao {
 
-	/**用于租车预定
-	 * @param cb ： carBook POJO对象
+	/**棰勫畾姹借溅
+	 * @param cb carbook瀵硅薄
 	 * @return
 	 */
 	public boolean bookCar(carbook cb);

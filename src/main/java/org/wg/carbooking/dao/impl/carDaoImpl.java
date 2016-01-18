@@ -1,10 +1,15 @@
 package org.wg.carbooking.dao.impl;
 
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
 import org.wg.carbooking.dao.baseDao;
 import org.wg.carbooking.dao.carDao;
 import org.wg.carbooking.model.car;
 
-public class carDaoImpl extends baseDao<car>implements carDao {
+@Repository(value = "carDaoImpl")
+public class carDaoImpl extends baseDao<car> implements carDao {
 
 	@Override
 	public boolean add(car c) {
@@ -38,6 +43,18 @@ public class carDaoImpl extends baseDao<car>implements carDao {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public car queryForCarBean(int id) {
+		String sql = "select * from `dbo.car` as A left join `dbo.typeofcar` as B on A.car_type=B.type_id where A.car_id=? ";
+		return queryForBean(car.class, sql, new Object[]{id});
+	}
+
+	@Override
+	public List<Map<String, Object>> queryForCarList() {
+		String sql = "select * from `dbo.car` as A left join `dbo.typeofcar` as B on A.car_type=B.type_id";
+		return queryForList(sql);
 	}
 
 }

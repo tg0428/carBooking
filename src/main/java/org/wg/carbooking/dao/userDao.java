@@ -1,12 +1,32 @@
 package org.wg.carbooking.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.wg.carbooking.model.user;
 
 public interface userDao {
 
-	/**用于用户注册
-	 * @param user ： user POJO对象
+	/**娣诲姞鐢ㄦ埛
+	 * @param user
 	 * @return
 	 */
-	public boolean register(user user);
+	public boolean add(user user);
+	
+	/**鏌ヨ鐢ㄦ埛
+	 * @param user
+	 * @return
+	 */
+	public boolean search(user user);
+	
+	/**鏌ヨ鐢ㄦ埛
+	 * @param user
+	 * @return
+	 */
+	public user queryForUserBean(user user);
+	
+	/**鏌ヨ鐢ㄦ埛鍒楄〃
+	 * @return
+	 */
+	public List<Map<String,Object>> queryForUserList();
 }

@@ -1,24 +1,38 @@
 package org.wg.carbooking.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.wg.carbooking.model.car;
 
 public interface carDao {
 
-	/**Ìí¼ÓÆû³µ
+	/**æ·»åŠ æ±½è½¦
 	 * @param c
 	 * @return
 	 */
 	public boolean add(car c);
 	
-	/**É¾³ýÆû³µ
+	/**åˆ é™¤æ±½è½¦
 	 * @param c
 	 * @return
 	 */
 	public boolean del(car c);
 	
-	/**¸üÐÂÆû³µ
+	/**æ›´æ–°æ±½è½¦
 	 * @param c
 	 * @return
 	 */
 	public boolean upd(car c);
+	
+	/**æŸ¥è¯¢æ±½è½¦
+	 * @param c
+	 * @return
+	 */
+	public car queryForCarBean(int id); 
+	
+	/**æŸ¥è¯¢æ±½è½¦åˆ—è¡¨
+	 * @return
+	 */
+	public List<Map<String,Object>> queryForCarList();
 }

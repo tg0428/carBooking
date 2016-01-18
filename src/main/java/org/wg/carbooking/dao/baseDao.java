@@ -52,4 +52,9 @@ public abstract class baseDao<T> {
 		}
 		return (T) o;
 	}
+	
+	public List<Map<String,Object>> queryForList(String sql){
+		Object[] o = new Object[]{};
+		return queryForList(o, sql);
+	}
 }
