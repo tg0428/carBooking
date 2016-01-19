@@ -1,0 +1,35 @@
+%
+	var headContent = {
+		include("/template/head.btl"){}
+%
+	<link rel="stylesheet" href="/carBooking/resources/css/cms/cms_login.css">
+	<script type="text/javascript">
+		var validate = {
+			valid : function(message, target, err){
+				var val = target.val();
+				if (!val){
+					err.html(message);
+					err.fadeIn(500).delay(3000).fadeOut(400);
+				}
+			}
+		}
+		$(function(){
+			$("#submit").click(function(){
+				validate.valid("用户名不能为空",$("#name"),$("#nv"));
+				validate.valid("密码不能为空",$("#password"),$("#pv"));
+		});
+		});
+	</script>
+%
+	};
+	var bodyContent = {
+		include("header.btl"){}
+		include("login_content.btl"){}
+	};
+%
+%
+	layout("/template/layout.btl",{head:headContent,body:bodyContent}){
+%
+%
+}
+%

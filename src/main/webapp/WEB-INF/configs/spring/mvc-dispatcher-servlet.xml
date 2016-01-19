@@ -88,7 +88,7 @@
 		<!-- 多视图解析器，需要设置viewNames和order -->
 		<property name="viewNames">
 			<list>
-				<value>/cmstemplate/**</value>
+				<value>/admin/**</value>
 			</list>
 		</property>
 		<property name="suffix" value=".btl" />

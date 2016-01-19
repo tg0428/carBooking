@@ -48,5 +48,19 @@ public class IndexAction {
          return "/template/model";
     } 
 	
+	
+	@RequestMapping(value="/admin.html")
+    public String admin(Model model) {        
+         model.addAttribute("hello", "hello world");  
+         model.addAttribute("a");
+         return "/admin/cms/admin";
+    } 
+	
+	@RequestMapping(value="/login.html")
+    public String login(Model model) {        
+         model.addAttribute("hello", "hello world");  
+         model.addAttribute("a");
+         return "/admin/login/login";
+    } 
 
 }

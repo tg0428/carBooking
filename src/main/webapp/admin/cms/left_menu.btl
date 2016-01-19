@@ -1,0 +1,64 @@
+<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+		<ul class="am-list admin-sidebar-list" id="collapase-nav-1">
+		  <li  class="am-panel">
+		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="#/"><i class="am-icon-home am-margin-left-sm"></i> 首页</a>
+		  </li>
+
+		  <li class="am-panel">
+		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#user-nav'}">
+		        <i class="am-icon-users am-margin-left-sm"></i> 用户管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
+		    </a>
+		    <ul class="am-list am-collapse admin-sidebar-sub" id="user-nav">
+		        <li><a href="#/userList/0"><i class="am-icon-list-alt am-margin-left-sm"></i> 用户管理列表 </a></li>
+		    </ul>
+		  </li>
+
+		  <li class="am-panel">
+		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#car-nav'}">
+		        <i class="am-icon-car am-margin-left-sm"></i> 车辆管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
+		    </a>
+		    <ul class="am-list am-collapse admin-sidebar-sub" id="car-nav">
+		        <li><a href="#/companyAdd"><span class="am-icon-plus am-margin-left-sm"></span> 添加车辆 </a></li>
+		        <li><a href="#/companyList/0"><span class="am-icon-list-alt am-margin-left-sm"></span> 车辆管理列表 </a></li>
+		    </ul>
+		  </li>
+
+		  <li class="am-panel">
+		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#news-nav'}">
+		        <i class="am-icon-newspaper-o am-margin-left-sm"></i> 新闻管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
+		    </a>
+		    <ul class="am-list am-collapse admin-sidebar-sub" id="news-nav">
+		        <li><a href="#/roleAdd"><span class="am-icon-plus am-margin-left-sm"></span> 添加新闻 </a></li>
+		        <li><a href="#/roleList/0"><span class="am-icon-list-alt am-margin-left-sm"></span> 新闻列表 </a></li>
+		    </ul>
+		  </li>
+
+		  <li class="am-panel">
+		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#notice-nav'}">
+		        <i class="am-icon-envelope-o am-margin-left-sm"></i> 公告管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
+		    </a>
+		    <ul class="am-list am-collapse admin-sidebar-sub" id="notice-nav">
+		        <li><a href="#/roleAdd"><span class="am-icon-plus am-margin-left-sm"></span> 添加公告 </a></li>
+		        <li><a href="#/roleList/0"><span class="am-icon-list-alt am-margin-left-sm"></span> 公告列表 </a></li>
+		    </ul>
+		  </li>
+
+		  <li class="am-panel">
+		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#activity-nav'}">
+		        <i class="am-icon-table am-margin-left-sm"></i> 活动管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
+		    </a>
+		    <ul class="am-list am-collapse admin-sidebar-sub" id="activity-nav">
+		        <li><a href="#/roleAdd"><span class="am-icon-plus am-margin-left-sm"></span> 添加活动 </a></li>
+		        <li><a href="#/roleList/0"><span class="am-icon-list-alt am-margin-left-sm"></span> 活动列表 </a></li>
+		    </ul>
+		  </li>
+
+		  <li  class="am-panel">
+		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="#/"><i class="am-icon-commenting-o am-margin-left-sm"></i> 帮助中心</a>
+		  </li>
+
+		  <li  class="am-panel">
+		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="#/"><i class="am-icon-tag am-margin-left-sm"></i> 公司简介</a>
+		  </li>
+		</ul>
+</div>

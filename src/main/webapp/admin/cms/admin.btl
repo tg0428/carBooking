@@ -1,0 +1,23 @@
+%
+ var headContent = {
+ 	include("/template/head.btl"){}
+ };
+ var bodyContent = {
+ 	include("/admin/cms/header.btl"){}
+%
+<div class="am-cf admin-main">
+%
+	include("/admin/cms/left_menu.btl"){}
+	include("/admin/cms/content.btl"){}
+%
+</div>
+% 
+	include("/admin/cms/footer.btl"){}
+ };
+%
+%
+ layout("/template/layout.btl",{head:headContent,body:bodyContent}){
+%
+%
+}
+%
