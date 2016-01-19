@@ -56,7 +56,7 @@ public class IndexAction {
          return "/admin/cms/admin";
     } 
 	
-	@RequestMapping(value="/login.html")
+	@RequestMapping(value="/cms/login.html")
     public String login(Model model) {        
          model.addAttribute("hello", "hello world");  
          model.addAttribute("a");

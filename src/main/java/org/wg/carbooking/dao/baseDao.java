@@ -45,7 +45,7 @@ public abstract class baseDao<T> {
 	public T queryForBean(Class<T> beanClass, String sql, Object[] objects) {
 		Object o;
 		try {
-			o = this.getmJdbcTemplate().queryForObject(sql, beanClass, objects);
+			o = this.getmJdbcTemplate().queryForObject(sql, new BeanPropertyRowMapper<T>(beanClass), objects);
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 			o = null;

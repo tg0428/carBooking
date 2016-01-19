@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.wg.carbooking.dao.adminDao;
 import org.wg.carbooking.dao.carBookDao;
 import org.wg.carbooking.dao.carDao;
 import org.wg.carbooking.dao.userDao;
@@ -18,7 +19,13 @@ public abstract class baseService {
 	public userDao mUD;
 	public carDao mCD;
 	public carBookDao mCBD;
+	public adminDao mAD;
 	
+	@Resource(name = "adminDaoImpl")
+	public void setmAD(adminDao mAD) {
+		this.mAD = mAD;
+	}
+
 	@Resource(name = "userDaoImpl")
 	public void setmUD(userDao mUD) {
 		this.mUD = mUD;

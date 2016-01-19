@@ -2,7 +2,6 @@ package org.wg.carbooking.dao;
 
 import java.util.List;
 import java.util.Map;
-
 import org.wg.carbooking.model.user;
 
 public interface userDao {

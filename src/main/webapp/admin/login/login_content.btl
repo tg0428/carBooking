@@ -1,20 +1,21 @@
 <div class="am-g">
   <div class="am-u-lg-3 am-u-md-4 am-u-sm-centered">
-    <form method="post" class="am-form">
+  <span style="font-size:10px;color:red;text-align:center">${msg!""}</span>	
+    <form method="post" class="am-form" id="admin" action="${ctxPath}/Login/access">
       <div class="am-input-group am-input-group-primary">
 	      <span class="am-input-group-label"><i class="am-icon-user am-icon-fw"></i></span>
-	      <input type="text" name="name" id="name" placeholder="请输入用户名"/>
+	      <input type="text" name="admin_name" id="name" placeholder="请输入用户名"/>
       </div>
       <span id="nv" style="font-size:10px;color:red;display:none"></span>
       <br>
       <div class="am-input-group am-input-group-warning">
       <span class="am-input-group-label"><i class="am-icon-lock am-icon-fw"></i></span>
-      <input type="password" name="password" id="password" placeholder="请输入密码">
+      <input type="password" name="admin_pass" id="password" placeholder="请输入密码">
       </div>
       <span id="pv" style="font-size:10px;color:red;display:none"></span>
       <br>
       <div class="am-cf">
-        <input type="button" id="submit" value="登 录" class="am-btn am-btn-primary am-btn-sm am-u-sm-centered">
+        <input type="button" id="login" value="登 录" class="am-btn am-btn-primary am-btn-sm am-u-sm-centered">
       </div>
     </form>
     <hr>

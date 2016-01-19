@@ -5,18 +5,24 @@
 	<link rel="stylesheet" href="/carBooking/resources/css/cms/cms_login.css">
 	<script type="text/javascript">
 		var validate = {
-			valid : function(message, target, err){
+			valid : function(message, target, err,callback){
 				var val = target.val();
 				if (!val){
 					err.html(message);
 					err.fadeIn(500).delay(3000).fadeOut(400);
+					return false;
 				}
+				return true;
 			}
 		}
 		$(function(){
-			$("#submit").click(function(){
-				validate.valid("用户名不能为空",$("#name"),$("#nv"));
-				validate.valid("密码不能为空",$("#password"),$("#pv"));
+			$("#login").click(function(){
+				var flag1 = validate.valid("用户名不能为空",$("#name"),$("#nv"));
+				var flag2 = validate.valid("密码不能为空",$("#password"),$("#pv"));
+				
+				if(flag1 == true && flag2 == true){
+					$("form").submit();
+				}
 		});
 		});
 	</script>

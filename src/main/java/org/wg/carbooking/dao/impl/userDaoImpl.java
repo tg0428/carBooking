@@ -4,7 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 import org.wg.carbooking.dao.baseDao;
@@ -75,5 +74,4 @@ public class userDaoImpl extends baseDao<user> implements userDao {
 		String sql = "select * from `dbo.user` as A left join `dbo.car` as B on A.book_car_id=B.car_id";
 		return queryForList(sql);
 	}
-	
 }

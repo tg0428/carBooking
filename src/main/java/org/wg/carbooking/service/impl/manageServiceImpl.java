@@ -1,6 +1,7 @@
 package org.wg.carbooking.service.impl;
 
 import org.springframework.stereotype.Service;
+import org.wg.carbooking.model.admin;
 import org.wg.carbooking.model.car;
 import org.wg.carbooking.model.carbook;
 import org.wg.carbooking.model.user;
@@ -38,6 +39,11 @@ public class manageServiceImpl extends baseService implements managerService {
 	@Override
 	public boolean BookCar(carbook cb) {
 		return mCBD.bookCar(cb);
+	}
+
+	@Override
+	public admin Access(admin admin) {
+		return mAD.queryForAdminBean(admin);
 	}
 
 }

@@ -1,4 +1,5 @@
 <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+	<div class="am-offcanvas-bar admin-offcanvas-bar">
 		<ul class="am-list admin-sidebar-list" id="collapase-nav-1">
 		  <li  class="am-panel">
 		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="#/"><i class="am-icon-home am-margin-left-sm"></i> 首页</a>
@@ -61,4 +62,12 @@
 		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="#/"><i class="am-icon-tag am-margin-left-sm"></i> 公司简介</a>
 		  </li>
 		</ul>
+		
+		<div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-bookmark admin-icon-yellow"></span> wiki</p>
+          <p>欢迎回来</p>
+        </div>
+      </div>
+	</div>
 </div>

@@ -1,6 +1,7 @@
 package org.wg.carbooking.service;
 
 import org.springframework.stereotype.Service;
+import org.wg.carbooking.model.admin;
 import org.wg.carbooking.model.car;
 import org.wg.carbooking.model.carbook;
 import org.wg.carbooking.model.user;
@@ -13,6 +14,12 @@ public interface managerService {
 	 * @return
 	 */
 	public boolean Login(user user);
+	
+	/**管理员登录方法
+	 * @param user
+	 * @return
+	 */
+	public admin Access(admin admin);
 	
 	/**注册方法
 	 * @param user
