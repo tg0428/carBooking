@@ -41,6 +41,8 @@
 
 	<!-- 静态资源处理， css， js， imgs -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<!-- 静态资源处理， ueditor编辑器上传的图片等资源 -->
+	<mvc:resources mapping="/ueditor/**" location="/ueditor/" />
 
 	<!-- 第一个GroupTemplate，模板放在Webapp下 -->
 	<bean name="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration"
