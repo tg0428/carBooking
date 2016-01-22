@@ -1,0 +1,16 @@
+<div style="margin:20px">
+	<div class="am-form-group am-form-icon">
+		 <i class="am-icon-flag"></i>
+		 <input type="email" id="doc-ipt-3" class="am-form-field am-radius" placeholder="输入标题" required>
+	</div>
+	<div id="myEditor" style="height:350px;margin-bottom:10px"></div>
+	<div class="am-form-group am-form-icon">
+    	<i class="am-icon-calendar"></i>
+  		<input type="text" class="am-form-field am-radius" placeholder="选择发布日期" required />
+  	</div>
+  	<p><button class="am-btn am-btn-default" id="publish">发布</button></p>
+ </div>
+<script type="text/javascript">
+        var ue = new baidu.editor.ui.Editor();
+        ue.render("myEditor");   
+</script>

@@ -30,6 +30,6 @@
   <!-- Amaze UI CSS -->
   <link rel="stylesheet" href="/carBooking/resources/amazeui/css/amazeui.min.css">
   <link rel="stylesheet" href="/carBooking/resources/amazeui/css/admin.css">
-  <script src="/carBooking/resources/amazeui/js/jquery.min.js"></script>
-  <script src="/carBooking/resources/amazeui/js/amazeui.min.js"></script>
-  <script src="/carBooking/resources/amazeui/js/app.js"></script>
+  <script src="${ctxPath}/resources/amazeui/js/jquery.min.js"></script>
+  <script src="${ctxPath}/resources/amazeui/js/amazeui.min.js"></script>
+  <script src="${ctxPath}/resources/amazeui/js/app.js"></script>

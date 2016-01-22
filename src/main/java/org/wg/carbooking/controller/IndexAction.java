@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.wg.carbooking.model.user;
+import org.wg.carbooking.vo.user;
 
 /**
  * test beetl and spring mvc controller
@@ -35,10 +35,12 @@ public class IndexAction {
 		
 	}
 	
-	@RequestMapping("/resource.html")
-	public String resource(
-			HttpServletRequest request) {
-		return "/template/index";
+	@RequestMapping("/edit")
+	public ModelAndView resource() {
+		ModelAndView view = new ModelAndView();
+		view.addObject("TITLE", "ÐÂÎÅ");
+		view.setViewName("/template/cms/edit");
+		return view;
 	}
 	
 	@RequestMapping(value="/model.html")

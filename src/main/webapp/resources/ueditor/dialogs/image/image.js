@@ -254,7 +254,6 @@
                 preview = $G('preview'),
                 width,
                 height;
-
             width = ((!ow || !oh) ? preview.offsetWidth:Math.min(ow, preview.offsetWidth));
             width = width+(border*2) > preview.offsetWidth ? width:(preview.offsetWidth - (border*2));
             height = (!ow || !oh) ? '':width*oh/ow;
@@ -908,8 +907,12 @@
                         }
                     })(img));
                     img.width = 113;
-                    img.setAttribute('src', urlPrefix + list[i].url + (list[i].url.indexOf('?') == -1 ? '?noCache=':'&noCache=') + (+new Date()).toString(36) );
-                    img.setAttribute('_src', urlPrefix + list[i].url);
+                    var url = list[i].url;
+                    var rootPath = url.substring(0,url.indexOf('/ueditor'));
+                    var reg = new RegExp(rootPath,"g")
+                    url = url.replace(reg,'');
+                    img.setAttribute('src', urlPrefix + url + (url.indexOf('?') == -1 ? '?noCache=':'&noCache=') + (+new Date()).toString(36) );
+                    img.setAttribute('_src', urlPrefix + url);
                     domUtils.addClass(icon, 'icon');
 
                     item.appendChild(img);

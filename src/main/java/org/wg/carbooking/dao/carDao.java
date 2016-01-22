@@ -3,7 +3,7 @@ package org.wg.carbooking.dao;
 import java.util.List;
 import java.util.Map;
 
-import org.wg.carbooking.model.car;
+import org.wg.carbooking.vo.car;
 
 public interface carDao {
 

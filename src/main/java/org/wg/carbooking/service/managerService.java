@@ -1,10 +1,13 @@
 package org.wg.carbooking.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
-import org.wg.carbooking.model.admin;
-import org.wg.carbooking.model.car;
-import org.wg.carbooking.model.carbook;
-import org.wg.carbooking.model.user;
+import org.wg.carbooking.vo.admin;
+import org.wg.carbooking.vo.car;
+import org.wg.carbooking.vo.carbook;
+import org.wg.carbooking.vo.typeOfCar;
+import org.wg.carbooking.vo.user;
 
 @Service
 public interface managerService {
@@ -50,4 +53,22 @@ public interface managerService {
 	 * @return
 	 */
 	public boolean BookCar(carbook cb);
+	
+	/**获取汽车优惠类型列表
+	 * @return
+	 */
+	public List<typeOfCar> GetTypeOfCar();
+	
+	/**添加优惠类型
+	 * @param type_detail
+	 * @return
+	 */
+	public boolean AddType(String type_detail);
+	
+	
+	/**删除优惠类型
+	 * @param type_id
+	 * @return
+	 */
+	public boolean DelType(int type_id);
 }

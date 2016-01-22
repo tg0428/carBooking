@@ -1,6 +1,6 @@
 package org.wg.carbooking.dao;
 
-import org.wg.carbooking.model.carbook;
+import org.wg.carbooking.vo.carbook;
 
 public interface carBookDao {
 

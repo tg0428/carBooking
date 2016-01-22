@@ -1,6 +1,6 @@
 package org.wg.carbooking.dao;
 
-import org.wg.carbooking.model.admin;
+import org.wg.carbooking.vo.admin;
 
 public interface adminDao {
 

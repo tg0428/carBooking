@@ -1,12 +1,15 @@
 package org.wg.carbooking.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
-import org.wg.carbooking.model.admin;
-import org.wg.carbooking.model.car;
-import org.wg.carbooking.model.carbook;
-import org.wg.carbooking.model.user;
 import org.wg.carbooking.service.baseService;
 import org.wg.carbooking.service.managerService;
+import org.wg.carbooking.vo.admin;
+import org.wg.carbooking.vo.car;
+import org.wg.carbooking.vo.carbook;
+import org.wg.carbooking.vo.typeOfCar;
+import org.wg.carbooking.vo.user;
 
 @Service("managerService")
 public class manageServiceImpl extends baseService implements managerService {
@@ -44,6 +47,21 @@ public class manageServiceImpl extends baseService implements managerService {
 	@Override
 	public admin Access(admin admin) {
 		return mAD.queryForAdminBean(admin);
+	}
+
+	@Override
+	public List<typeOfCar> GetTypeOfCar() {
+		return mTC.getTypeList();
+	}
+
+	@Override
+	public boolean AddType(String type_detail) {
+		return mTC.addType(type_detail);
+	}
+
+	@Override
+	public boolean DelType(int type_id) {
+		return mTC.delType(type_id);
 	}
 
 }

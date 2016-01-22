@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Service;
 import org.wg.carbooking.dao.adminDao;
 import org.wg.carbooking.dao.carBookDao;
 import org.wg.carbooking.dao.carDao;
+import org.wg.carbooking.dao.typeOfCarDao;
 import org.wg.carbooking.dao.userDao;
-import org.wg.carbooking.model.car;
-import org.wg.carbooking.model.user;
+import org.wg.carbooking.vo.car;
+import org.wg.carbooking.vo.user;
 
 @Service("baseService")
 public abstract class baseService {
@@ -20,6 +20,7 @@ public abstract class baseService {
 	public carDao mCD;
 	public carBookDao mCBD;
 	public adminDao mAD;
+	public typeOfCarDao mTC;
 	
 	@Resource(name = "adminDaoImpl")
 	public void setmAD(adminDao mAD) {
@@ -39,6 +40,11 @@ public abstract class baseService {
 	@Resource(name = "carBookImpl")
 	public void setmCBD(carBookDao mCBD) {
 		this.mCBD = mCBD;
+	}
+	
+	@Resource(name = "typeOfCarDaoImpl")
+	public void setmTC(typeOfCarDao mTC) {
+		this.mTC = mTC;
 	}
 
 	public List<Map<String,Object>> getUserList(){

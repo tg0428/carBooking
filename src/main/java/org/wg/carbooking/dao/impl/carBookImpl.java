@@ -3,7 +3,7 @@ package org.wg.carbooking.dao.impl;
 import org.springframework.stereotype.Repository;
 import org.wg.carbooking.dao.baseDao;
 import org.wg.carbooking.dao.carBookDao;
-import org.wg.carbooking.model.carbook;
+import org.wg.carbooking.vo.carbook;
 
 @Repository(value = "carBookImpl")
 public class carBookImpl extends baseDao<carbook>implements carBookDao {

@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 import org.wg.carbooking.dao.baseDao;
 import org.wg.carbooking.dao.carDao;
-import org.wg.carbooking.model.car;
+import org.wg.carbooking.vo.car;
 
 @Repository(value = "carDaoImpl")
 public class carDaoImpl extends baseDao<car> implements carDao {

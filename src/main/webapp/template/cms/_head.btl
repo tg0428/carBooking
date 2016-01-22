@@ -1,0 +1,4 @@
+<link href="${ctxPath}/resources/ueditor/themes/default/css/ueditor.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="${ctxPath}/resources/ueditor/ueditor.config.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="${ctxPath}/resources/ueditor/ueditor.all.min.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="${ctxPath}/resources/ueditor/lang/zh-cn/zh-cn.js"></script>

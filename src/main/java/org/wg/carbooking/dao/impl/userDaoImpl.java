@@ -8,8 +8,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 import org.wg.carbooking.dao.baseDao;
 import org.wg.carbooking.dao.userDao;
-import org.wg.carbooking.model.user;
 import org.wg.carbooking.utils.MD5;
+import org.wg.carbooking.vo.user;
 
 @Repository(value = "userDaoImpl")
 public class userDaoImpl extends baseDao<user> implements userDao {

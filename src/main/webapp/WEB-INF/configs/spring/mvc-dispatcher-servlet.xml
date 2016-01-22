@@ -111,5 +111,4 @@
 		<property name="suffix" value=".jsp" />
 		<property name="contentType" value="text/html;charset=UTF-8" />
 	</bean>
-
 </beans>

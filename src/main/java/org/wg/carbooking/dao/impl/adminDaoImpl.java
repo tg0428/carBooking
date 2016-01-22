@@ -3,7 +3,7 @@ package org.wg.carbooking.dao.impl;
 import org.springframework.stereotype.Repository;
 import org.wg.carbooking.dao.adminDao;
 import org.wg.carbooking.dao.baseDao;
-import org.wg.carbooking.model.admin;
+import org.wg.carbooking.vo.admin;
 
 @Repository(value = "adminDaoImpl")
 public class adminDaoImpl extends baseDao<admin> implements adminDao {

@@ -1,4 +1,4 @@
-package org.wg.carbooking.model;
+package org.wg.carbooking.vo;
 /**
  * test beetl model
  * */

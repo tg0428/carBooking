@@ -1,6 +1,13 @@
 %
  var headContent = {
  	include("/template/head.btl"){}
+ 	include("/template/cms/_head.btl"){}
+ %
+<link rel="stylesheet" href="${ctxPath}/resources/bootstrap_table/css/bootstrap-table.min.css">
+<script type="text/javascript" src="${ctxPath}/resources/bootstrap_table/bootstrap-table.js"></script>
+<script type="text/javascript" src="${ctxPath}/resources/bootstrap_table/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript" src="${ctxPath}/resources/js/admin.js"></script>
+ %
  };
  var bodyContent = {
  	include("/admin/cms/header.btl"){}
@@ -9,6 +16,7 @@
 %
 	include("/admin/cms/left_menu.btl"){}
 	include("/admin/cms/content.btl"){}
+	include("/admin/cms/typePopur.btl"){}
 %
 </div>
 % 

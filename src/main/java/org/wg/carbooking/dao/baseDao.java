@@ -57,4 +57,9 @@ public abstract class baseDao<T> {
 		Object[] o = new Object[]{};
 		return queryForList(o, sql);
 	}
+	
+	public List<T> queryForList(Class<T> beanClass, String sql){
+		Object[] o = new Object[]{};
+		return queryForList(beanClass, sql, o);
+	}
 }
