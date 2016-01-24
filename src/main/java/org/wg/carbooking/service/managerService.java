@@ -1,6 +1,7 @@
 package org.wg.carbooking.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.wg.carbooking.vo.admin;
@@ -71,4 +72,26 @@ public interface managerService {
 	 * @return
 	 */
 	public boolean DelType(int type_id);
+	
+	/**获取车辆管理列表
+	 * @return
+	 */
+	public List<Map<String,Object>> GetCarList();
+	
+	/**获取用户管理列表
+	 * @return
+	 */
+	public List<Map<String,Object>> GetUserList();
+	
+	/**获取车辆实体
+	 * @param id
+	 * @return
+	 */
+	public car GetCarBean(int id);
+	
+	/**获取用户实体
+	 * @param user
+	 * @return
+	 */
+	public user GetUserBean(user user);
 }

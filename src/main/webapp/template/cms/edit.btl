@@ -6,11 +6,19 @@
 	<div id="myEditor" style="height:350px;margin-bottom:10px"></div>
 	<div class="am-form-group am-form-icon">
     	<i class="am-icon-calendar"></i>
-  		<input type="text" class="am-form-field am-radius" placeholder="选择发布日期" required />
+  		<input type="text" id="time" class="am-form-field am-radius" placeholder="选择发布日期" required />
   	</div>
-  	<p><button class="am-btn am-btn-default" id="publish">发布</button></p>
+  	<p><button class="am-btn am-btn-primary am-animation-scale-down" id="publish"></button></p>
  </div>
 <script type="text/javascript">
         var ue = new baidu.editor.ui.Editor();
         ue.render("myEditor");   
+        $(function(){
+        	$('#time').dateRangePicker(
+			{
+				autoClose: true,
+				singleDate : true,
+				showShortcuts: false 
+			});
+        })
 </script>

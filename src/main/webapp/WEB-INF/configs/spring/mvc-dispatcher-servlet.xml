@@ -19,7 +19,7 @@
 
 	<!-- Spring MVC配置 -->
 	<mvc:annotation-driven>
-		<mvc:message-converters register-defaults="true">
+		<!-- mvc:message-converters register-defaults="true">
 			<bean class="org.beetl.json.ext.BeetlJsonHttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
@@ -36,7 +36,7 @@
 					</map>
 				</property>
 			</bean>
-		</mvc:message-converters>
+		</mvc:message-converters> -->
 	</mvc:annotation-driven>
 
 	<!-- 静态资源处理， css， js， imgs -->
@@ -48,25 +48,12 @@
 	<bean name="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration"
 		init-method="init">
 		<property name="configFileResource" value="/WEB-INF/beetl.properties" />
-		<!-- <property name="functions"> <map> <entry key="testFunction" value-ref="testFunction"/> 
-			</map> </property> <property name="functionPackages"> <map> <entry key="fp" 
-			value-ref="testFunctionPackage"/> </map> </property> <property name="tagFactorys"> 
-			<map> <entry key="html.output" value-ref="testTagFactory"/> <entry key="html.output2" 
-			value-ref="testTagFactory2"/> </map> </property> -->
-
 	</bean>
-
-	<!-- <bean name="testTagFactory" class="org.beetl.ext.spring.SpringBeanTagFactory"> 
-		<property name="name" value="testTag"/> </bean> <bean name="testTagFactory2" 
-		class="org.beetl.ext.spring.SpringBeanTagFactory"> <property name="name" 
-		value="testTag2"/> </bean> -->
 
 	<bean name="cmsbeetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration"
 		init-method="init">
 		<property name="configFileResource" value="/WEB-INF/cms-beetl.properties" />
-
 	</bean>
-
 
 	<!-- Beetl视图解析器1 -->
 	<bean name="beetlViewResolver" class="org.beetl.ext.spring.BeetlSpringViewResolver">
@@ -98,8 +85,29 @@
 		<property name="order" value="1" />
 		<!-- 多GroupTemplate，需要指定使用的bean -->
 		<property name="config" ref="cmsbeetlConfig" />
+	</bean>
+	
+	<!-- 配置ViewResolver。 可以用多个ViewResolver。 使用order属性排序。 InternalResourceViewResolver放在最后。 -->
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+				<entry key="htm" value="text/html" />
+			</map>
+		</property>
 
-
+		<property name="defaultViews">
+			<list>
+				<!-- JSON View -->
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+				</bean>
+			</list>
+		</property>
+		<property name="ignoreAcceptHeader" value="true" />
 	</bean>
 
 	<!-- JSP视图解析器 -->
@@ -110,5 +118,14 @@
 		<property name="prefix" value="/WEB-INF/" />
 		<property name="suffix" value=".jsp" />
 		<property name="contentType" value="text/html;charset=UTF-8" />
+	</bean>
+
+	<!--2*1024*1024即2M resolveLazily属性启用是为了推迟文件解析，以便捕获文件大小异常 -->
+	<bean
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		id="multipartResolver">
+		<property value="2097152" name="maxUploadSize" />
+		<property value="UTF-8" name="defaultEncoding" />
+		<property value="true" name="resolveLazily" />
 	</bean>
 </beans>

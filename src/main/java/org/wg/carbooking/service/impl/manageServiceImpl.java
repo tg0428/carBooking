@@ -1,7 +1,7 @@
 package org.wg.carbooking.service.impl;
 
 import java.util.List;
-
+import java.util.Map;
 import org.springframework.stereotype.Service;
 import org.wg.carbooking.service.baseService;
 import org.wg.carbooking.service.managerService;
@@ -62,6 +62,26 @@ public class manageServiceImpl extends baseService implements managerService {
 	@Override
 	public boolean DelType(int type_id) {
 		return mTC.delType(type_id);
+	}
+
+	@Override
+	public List<Map<String, Object>> GetCarList() {
+		return mCD.queryForCarList();
+	}
+
+	@Override
+	public List<Map<String, Object>> GetUserList() {
+		return mUD.queryForUserList();
+	}
+
+	@Override
+	public car GetCarBean(int id) {
+		return mCD.queryForCarBean(id);
+	}
+
+	@Override
+	public user GetUserBean(user user) {
+		return mUD.queryForUserBean(user);
 	}
 
 }

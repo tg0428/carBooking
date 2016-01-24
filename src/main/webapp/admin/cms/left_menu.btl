@@ -2,69 +2,69 @@
 	<div class="am-offcanvas-bar admin-offcanvas-bar">
 		<ul class="am-list admin-sidebar-list" id="collapase-nav-1">
 		  <li  class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)"><i class="am-icon-home am-margin-left-sm"></i> 首页</a>
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)"><i class="am-icon-home am-margin-left-sm"></i> 首页</a>
 		  </li>
 		  
 		  <li  class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)"><i class="am-icon-file-image-o am-margin-left-sm"></i> 图片管理</a>
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)"><i class="am-icon-file-image-o am-margin-left-sm"></i> 图片管理</a>
 		  </li>
 
 		  <li class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#user-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#user-nav'}">
 		        <i class="am-icon-users am-margin-left-sm"></i> 用户管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="user-nav">
-		        <li><a href="javascript:void(0)"><i class="am-icon-list-alt am-margin-left-sm"></i> 用户管理列表 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="userlist"><i class="am-icon-list-alt am-margin-left-sm"></i> 用户管理列表 </a></li>
 		    </ul>
 		  </li>
 
 		  <li class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#car-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#car-nav'}">
 		        <i class="am-icon-car am-margin-left-sm"></i> 车辆管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="car-nav">
-		    	<li><a href="javascript:void(0)" onclick="addType()"><span class="am-icon-money am-margin-left-sm"></span> 添加优惠类型 </a></li>
-		        <li><a href="javascript:void(0)" id="car"><span class="am-icon-plus am-margin-left-sm"></span> 添加车辆 </a></li>
-		        <li><a href="javascript:void(0)"><span class="am-icon-list-alt am-margin-left-sm"></span> 车辆管理列表 </a></li>
+		    	<li><a style="text-decoration:none" href="javascript:void(0)" onclick="addType()"><span class="am-icon-money am-margin-left-sm"></span> 添加优惠类型 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="car"><span class="am-icon-plus am-margin-left-sm"></span> 添加车辆 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="carlist"><span class="am-icon-list-alt am-margin-left-sm"></span> 车辆管理列表 </a></li>
 		    </ul>
 		  </li>
 
 		  <li class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#news-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#news-nav'}">
 		        <i class="am-icon-newspaper-o am-margin-left-sm"></i> 新闻管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="news-nav">
-		        <li><a href="javascript:void(0)" id="news"><span class="am-icon-plus am-margin-left-sm"></span> 添加新闻 </a></li>
-		        <li><a href="javascript:void(0)"><span class="am-icon-list-alt am-margin-left-sm"></span> 新闻列表 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="news"><span class="am-icon-plus am-margin-left-sm"></span> 添加新闻 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="newslist"><span class="am-icon-list-alt am-margin-left-sm"></span> 新闻列表 </a></li>
 		    </ul>
 		  </li>
 
 		  <li class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#notice-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#notice-nav'}">
 		        <i class="am-icon-envelope-o am-margin-left-sm"></i> 公告管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="notice-nav">
-		        <li><a href="javascript:void(0)" id="notice"><span class="am-icon-plus am-margin-left-sm"></span> 添加公告 </a></li>
-		        <li><a href="javascript:void(0)"><span class="am-icon-list-alt am-margin-left-sm"></span> 公告列表 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="notice"><span class="am-icon-plus am-margin-left-sm"></span> 添加公告 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="noticelist"><span class="am-icon-list-alt am-margin-left-sm"></span> 公告列表 </a></li>
 		    </ul>
 		  </li>
 
 		  <li class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1', target: '#activity-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#activity-nav'}">
 		        <i class="am-icon-table am-margin-left-sm"></i> 活动管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="activity-nav">
-		        <li><a href="javascript:void(0)" id="activity"><span class="am-icon-plus am-margin-left-sm"></span> 添加活动 </a></li>
-		        <li><a href="javascript:void(0)"><span class="am-icon-list-alt am-margin-left-sm"></span> 活动列表 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="activity"><span class="am-icon-plus am-margin-left-sm"></span> 添加活动 </a></li>
+		        <li><a style="text-decoration:none" href="javascript:void(0)" id="activitylist"><span class="am-icon-list-alt am-margin-left-sm"></span> 活动列表 </a></li>
 		    </ul>
 		  </li>
 
 		  <li  class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)" id="help"><i class="am-icon-commenting-o am-margin-left-sm"></i> 帮助中心</a>
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)" id="help"><i class="am-icon-commenting-o am-margin-left-sm"></i> 帮助中心</a>
 		  </li>
 
 		  <li  class="am-panel">
-		    <a data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)" id="summary"><i class="am-icon-tag am-margin-left-sm"></i> 公司简介</a>
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)" id="summary"><i class="am-icon-tag am-margin-left-sm"></i> 公司简介</a>
 		  </li>
 		</ul>
 		

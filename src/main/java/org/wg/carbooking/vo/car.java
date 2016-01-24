@@ -1,5 +1,7 @@
 package org.wg.carbooking.vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class car {
 
 	private int car_id;
@@ -8,7 +10,8 @@ public class car {
 	private String retail_price;
 	private String car_detail;
 	private String image_url;
-	private int car_type;
+	private MultipartFile file;
+	private String car_type;
 	private String tips;
 
 	public int getCar_id() {
@@ -19,6 +22,14 @@ public class car {
 		this.car_id = car_id;
 	}
 
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+	
 	public String getCar_name() {
 		return car_name;
 	}
@@ -59,11 +70,11 @@ public class car {
 		this.image_url = image_url;
 	}
 
-	public int getCar_type() {
+	public String getCar_type() {
 		return car_type;
 	}
 
-	public void setCar_type(int car_type) {
+	public void setCar_type(String car_type) {
 		this.car_type = car_type;
 	}
 
