@@ -29,7 +29,7 @@ public interface carDao {
 	 * @param c
 	 * @return
 	 */
-	public car queryForCarBean(int id); 
+	public car queryForCarBean(String id); 
 	
 	/**查询汽车列表
 	 * @return

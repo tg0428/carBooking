@@ -33,14 +33,14 @@ public class cmsManageController {
 	public @ResponseBody List<typeOfCar> typeOfCar() {
 		return ms.GetTypeOfCar();
 	}
-	
+
 	@RequestMapping(value = "/getCarList")
-	public @ResponseBody List<Map<String,Object>> carOfList() {
+	public @ResponseBody List<Map<String, Object>> carOfList() {
 		return ms.GetCarList();
 	}
-	
+
 	@RequestMapping(value = "/getUserList")
-	public @ResponseBody List<Map<String,Object>> userOfList() {
+	public @ResponseBody List<Map<String, Object>> userOfList() {
 		return ms.GetUserList();
 	}
 
@@ -63,23 +63,59 @@ public class cmsManageController {
 
 	@RequestMapping(value = "/addCar", method = RequestMethod.POST)
 	public @ResponseBody result addFile(car car, HttpServletRequest req) throws IOException {
-		
+
 		MultipartFile file = car.getFile();
 		String destinationDir = req.getSession().getServletContext().getRealPath("/upload");
-		
-		if (!file.isEmpty()) {
-			
-			/**将获取到的多媒体文件流拷贝到项目本地upload目录中*/
-			
-			FileUtils.copyInputStreamToFile(file.getInputStream(), new File(destinationDir,
-					System.currentTimeMillis() + file.getOriginalFilename()));
-			car.setImage_url(destinationDir + System.currentTimeMillis() + file.getOriginalFilename());
-			ms.AddCar(car);
-			rs.setMsg("true");
-			return rs;
+		long timeStamp = System.currentTimeMillis();
+
+		if (file != null) {
+
+			/** 将获取到的多媒体文件流拷贝到项目本地upload目录中 */
+
+			FileUtils.copyInputStreamToFile(file.getInputStream(),
+					new File(destinationDir, timeStamp + file.getOriginalFilename()));
+			car.setImage_url(destinationDir + "\\" + timeStamp + file.getOriginalFilename());
+			car.setImage_server_url(req.getSession().getServletContext().getContextPath() + "/upload/" + timeStamp
+					+ file.getOriginalFilename());
 		}
-		
-		rs.setMsg("false");
+
+		ms.AddCar(car);
+		rs.setMsg("true");
 		return rs;
+	}
+
+	@RequestMapping(value = "/updataCar", method = RequestMethod.POST)
+	public @ResponseBody result updataCar(car car, HttpServletRequest req) throws IOException {
+		MultipartFile file = car.getFile();
+		String destinationDir = req.getSession().getServletContext().getRealPath("/upload");
+		long timeStamp = System.currentTimeMillis();
+
+		if (file != null) {
+
+			/** 将获取到的多媒体文件流拷贝到项目本地upload目录中 */
+
+			FileUtils.copyInputStreamToFile(file.getInputStream(),
+					new File(destinationDir, timeStamp + file.getOriginalFilename()));
+			car.setImage_url(destinationDir + "\\" + timeStamp + file.getOriginalFilename());
+			car.setImage_server_url(req.getSession().getServletContext().getContextPath() + "/upload/" + timeStamp
+					+ file.getOriginalFilename());
+		}
+		ms.UpdCar(car);
+		rs.setMsg("true");
+		return rs;
+	}
+
+	@RequestMapping(value = "/delCar", method = RequestMethod.POST)
+	public @ResponseBody result delCar(car car) {
+		String url = ms.GetCarBean(car.getCar_id()).getImage_url();
+		if (ms.DelCar(car) && delFile(url)) {
+			rs.setMsg("true");
+		}
+		return rs;
+	}
+
+	public boolean delFile(String url) {
+		File file = new File(url);
+		return file.delete();
 	}
 }

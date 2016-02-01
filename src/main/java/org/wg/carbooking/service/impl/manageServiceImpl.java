@@ -75,7 +75,7 @@ public class manageServiceImpl extends baseService implements managerService {
 	}
 
 	@Override
-	public car GetCarBean(int id) {
+	public car GetCarBean(String id) {
 		return mCD.queryForCarBean(id);
 	}
 

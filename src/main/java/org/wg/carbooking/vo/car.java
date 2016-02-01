@@ -4,21 +4,30 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class car {
 
-	private int car_id;
+	private String car_id;
 	private String car_name;
 	private String leaguer_price;
 	private String retail_price;
 	private String car_detail;
 	private String image_url;
+	private String image_server_url;
 	private MultipartFile file;
 	private String car_type;
 	private String tips;
 
-	public int getCar_id() {
+	public String getImage_server_url() {
+		return image_server_url;
+	}
+
+	public void setImage_server_url(String image_server_url) {
+		this.image_server_url = image_server_url;
+	}
+	
+	public String getCar_id() {
 		return car_id;
 	}
 
-	public void setCar_id(int car_id) {
+	public void setCar_id(String car_id) {
 		this.car_id = car_id;
 	}
 

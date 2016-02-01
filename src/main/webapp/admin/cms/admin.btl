@@ -20,6 +20,7 @@
 	include("/admin/cms/content.btl"){}
 	include("/admin/cms/typePopur.btl"){}
 	include("/admin/cms/carPopur.btl"){}
+	include("/template/cms/view.btl"){}
 %
 </div>
 % 

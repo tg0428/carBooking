@@ -38,8 +38,10 @@ var init = {
 			    }, {
 			        field: 'car_detail',
 			        title: '车辆详情',
-			        align: 'left',
-			        valign: 'top'
+			        align: 'center',
+			        valign: 'top',
+			        events: operateEvents,
+			        formatter:view_detail
 			    }, {
 			        field: 'type_detail',
 			        title: '优惠类型',
@@ -50,7 +52,8 @@ var init = {
 			        title: '操作',
 			        align: 'center',
 			        valign: 'middle',
-			        clickToSelect: false
+			        events: operateEvents,
+			        formatter:modify_del
 			    }],
 			    onClickRow: function (row) {
 			        //TODO

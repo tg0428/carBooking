@@ -87,7 +87,7 @@ public interface managerService {
 	 * @param id
 	 * @return
 	 */
-	public car GetCarBean(int id);
+	public car GetCarBean(String id);
 	
 	/**获取用户实体
 	 * @param user

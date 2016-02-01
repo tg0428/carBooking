@@ -1,19 +1,20 @@
 <div class="am-modal am-modal-no-btn" tabindex="-1" id="car-modal">
   <div class="am-modal-dialog">
-    <div class="am-modal-hd">添加车辆
+    <div class="am-modal-hd">添加车辆（*为必填项）
       <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
     </div>
     <div class="am-modal-bd">
-	    <form id="addCarForm" class="am-form am-form-horizontal" action="${ctxPath}/cmsMg/addCar" enctype="multipart/form-data" method="post">
+	    <form id="addCarForm" class="am-form am-form-horizontal"  enctype="multipart/form-data" method="post">
+	    <input type="hidden" value="" name="car_id" id="car_id">
 	  <div class="am-form-group am-form-group-sm">
-	    <label for="car_name" class="am-u-sm-2 am-form-label">车辆名称</label>
+	    <label for="car_name" class="am-u-sm-2 am-form-label">车辆名称*</label>
 	    <div class="am-u-sm-10">
-	      <input type="text" name="car_name" class="am-form-field am-radius" id="car_name" placeholder="添加车辆名称(1-15字符)">
+	      <input type="text" name="car_name" class="am-form-field am-radius" id="car_name" placeholder="添加车辆名称(1-15字)">
 	    </div>
 	  </div>
 	
 	  <div class="am-form-group am-form-group-sm">
-	    <label for="leaguer_price" class="am-u-sm-2 am-form-label">会员价</label>
+	    <label for="leaguer_price" class="am-u-sm-2 am-form-label">会员价*</label>
 	    <div class="am-u-sm-10">
 	      <div class="am-input-group">
   			<span class="am-input-group-label">￥</span>	
@@ -23,7 +24,7 @@
 	  </div>
 	  
 	  <div class="am-form-group am-form-group-sm">
-	    <label for="retail_price" class="am-u-sm-2 am-form-label">门市价</label>
+	    <label for="retail_price" class="am-u-sm-2 am-form-label">门市价*</label>
 	    <div class="am-u-sm-10">
 		   <div class="am-input-group">
 	  		<span class="am-input-group-label">￥</span>	
@@ -33,14 +34,14 @@
 	  </div>
 	  
 	  <div class="am-form-group am-form-group-sm">
-	    <label for="car_detail" class="am-u-sm-2 am-form-label">车辆详情</label>
+	    <label for="car_detail" class="am-u-sm-2 am-form-label">车辆详情*</label>
 	    <div class="am-u-sm-10">
-	      <textarea name="car_detail" id="car_detail" class="am-form-field am-radius" rows="5" id="doc-ta-1"></textarea>
+	      <textarea name="car_detail" id="car_detail" class="am-form-field am-radius" rows="5" id="doc-ta-1" placeholder="车辆详情（1-200字）"></textarea>
 	    </div>
 	  </div>
 	  
 	  <div class="am-form-group am-form-select am-form-group-sm">
-	  	<label for="car_type" class="am-u-sm-2 am-form-label">优惠类型</label>
+	  	<label for="car_type" class="am-u-sm-2 am-form-label">优惠类型*</label>
 	  	<div class="am-u-sm-10">
     		<select class="am-input-sm" name="car_type" id="car_type">
       			<option value="">-----------------------------------选择优惠类型----------------------------------</option>
@@ -53,6 +54,13 @@
   	  	<div class="am-u-sm-10">
   			<input type="file" name="file" id="file" class="am-form-field am-radius" value="选择上传的文件" multiple>
   		</div>
+	  </div>
+	  
+	  <div class="am-form-group am-form-group-sm">
+	    <label for="tips" class="am-u-sm-2 am-form-label">备注说明</label>
+	    <div class="am-u-sm-10">
+	      <textarea name="tips" id="tips" class="am-form-field am-radius" rows="3" id="doc-ta-1" placeholder="备注（0-150字）"></textarea>
+	    </div>
 	  </div>
 	</form>
 	<div class="am-form-group am-form-group-sm">

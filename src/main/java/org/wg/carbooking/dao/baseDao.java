@@ -41,7 +41,7 @@ public abstract class baseDao<T> {
 		return null;
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked" })
 	public T queryForBean(Class<T> beanClass, String sql, Object[] objects) {
 		Object o;
 		try {
