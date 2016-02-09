@@ -19,7 +19,7 @@
 		  </li>
 
 		  <li class="am-panel">
-		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#car-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#car-nav'}" id="car_home">
 		        <i class="am-icon-car am-margin-left-sm"></i> 车辆管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="car-nav">
@@ -30,7 +30,7 @@
 		  </li>
 
 		  <li class="am-panel">
-		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#news-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#news-nav'}" id="news_home">
 		        <i class="am-icon-newspaper-o am-margin-left-sm"></i> 新闻管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="news-nav">
@@ -40,7 +40,7 @@
 		  </li>
 
 		  <li class="am-panel">
-		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#notice-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#notice-nav'}" id="notice_home">
 		        <i class="am-icon-envelope-o am-margin-left-sm"></i> 公告管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="notice-nav">
@@ -50,7 +50,7 @@
 		  </li>
 
 		  <li class="am-panel">
-		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#activity-nav'}">
+		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1', target: '#activity-nav'}" id="activity_home">
 		        <i class="am-icon-table am-margin-left-sm"></i> 活动管理 <i class="am-icon-angle-right am-fr am-margin-right"></i>
 		    </a>
 		    <ul class="am-list am-collapse admin-sidebar-sub" id="activity-nav">

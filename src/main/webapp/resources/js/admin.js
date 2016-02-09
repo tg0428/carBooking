@@ -4,19 +4,19 @@
 var admin = {
 			
 			summary : function(){
-				admin.ObjectClick($("#summary"),"发布简介");
+				admin.ObjectClick($("#summary"),"发布简介",1);
 			},
 			activity : function(){
-				admin.ObjectClick($("#activity"),"发布活动");
+				admin.ObjectClick($("#activity"),"发布活动",5);
 			},
 			notice : function(){
-				admin.ObjectClick($("#notice"),"发布公告");
+				admin.ObjectClick($("#notice"),"发布公告",3);
 			},
 			help : function(){
-				admin.ObjectClick($("#help"),"发布帮助信息");
+				admin.ObjectClick($("#help"),"发布帮助信息",2);
 			},
 			news : function(){
-				admin.ObjectClick($("#news"),"发布新闻");
+				admin.ObjectClick($("#news"),"发布新闻",4);
 			},
 			loadtype : function(){
 				$.post("/carBooking/cmsMg/getType",function(data){
@@ -120,12 +120,13 @@ var admin = {
 					return false;
 				}
 			},
-			ObjectClick : function(o, str){
+			ObjectClick : function(o, str, type){
 				o.click(function(){	
 					$.get("/carBooking/edit",function(data){
 						switchArea.showedit();
 						$("#admin-content").html(data);
 						$("#publish").append(str);
+						$("#article_type").val(type);
 					});
 				});
 			},

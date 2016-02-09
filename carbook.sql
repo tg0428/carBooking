@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-01-18 18:02:55
+Date: 2016-02-02 21:33:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,11 +24,7 @@ CREATE TABLE `dbo.admin` (
   `admin_name` varchar(10) NOT NULL COMMENT '管理员用户名',
   `admin_pass` varchar(10) NOT NULL COMMENT '管理员密码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of dbo.admin
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dbo.article
@@ -46,10 +42,6 @@ CREATE TABLE `dbo.article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of dbo.article
--- ----------------------------
-
--- ----------------------------
 -- Table structure for dbo.car
 -- ----------------------------
 DROP TABLE IF EXISTS `dbo.car`;
@@ -59,17 +51,14 @@ CREATE TABLE `dbo.car` (
   `leaguer_price` decimal(10,0) NOT NULL COMMENT '会员价格',
   `retail_price` decimal(10,0) NOT NULL COMMENT '门市价格',
   `car_detail` varchar(255) DEFAULT NULL COMMENT '汽车详情',
+  `image_server_url` varchar(255) DEFAULT NULL,
   `image_url` varchar(255) DEFAULT NULL COMMENT '汽车图片路径',
   `car_type` int(2) DEFAULT NULL COMMENT '汽车优惠类型',
   `tips` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`car_id`),
   KEY `car2type` (`car_type`),
   CONSTRAINT `car2type` FOREIGN KEY (`car_type`) REFERENCES `dbo.typeofcar` (`type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of dbo.car
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dbo.typeofarticle
@@ -82,15 +71,6 @@ CREATE TABLE `dbo.typeofarticle` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of dbo.typeofarticle
--- ----------------------------
-INSERT INTO `dbo.typeofarticle` VALUES ('1', '公司简介');
-INSERT INTO `dbo.typeofarticle` VALUES ('2', '帮助中心');
-INSERT INTO `dbo.typeofarticle` VALUES ('3', '公司公告');
-INSERT INTO `dbo.typeofarticle` VALUES ('4', '公司新闻');
-INSERT INTO `dbo.typeofarticle` VALUES ('5', '公司活动');
-
--- ----------------------------
 -- Table structure for dbo.typeofcar
 -- ----------------------------
 DROP TABLE IF EXISTS `dbo.typeofcar`;
@@ -98,11 +78,7 @@ CREATE TABLE `dbo.typeofcar` (
   `type_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '汽车优惠类型id',
   `type_detail` varchar(20) NOT NULL COMMENT '汽车优惠类型详情',
   PRIMARY KEY (`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of dbo.typeofcar
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dbo.user
@@ -121,7 +97,3 @@ CREATE TABLE `dbo.user` (
   KEY `user2car` (`book_car_id`),
   CONSTRAINT `user2car` FOREIGN KEY (`book_car_id`) REFERENCES `dbo.car` (`car_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of dbo.user
--- ----------------------------

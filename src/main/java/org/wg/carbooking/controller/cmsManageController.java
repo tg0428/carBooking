@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.wg.carbooking.model.result;
 import org.wg.carbooking.service.managerService;
+import org.wg.carbooking.vo.article;
 import org.wg.carbooking.vo.car;
 import org.wg.carbooking.vo.typeOfCar;
 
@@ -112,6 +115,27 @@ public class cmsManageController {
 			rs.setMsg("true");
 		}
 		return rs;
+	}
+	
+	@RequestMapping(value = "/publish", method = RequestMethod.POST)
+	public @ResponseBody result publish(article article){
+		if (ms.addArticle(article)){
+			rs.setMsg("true");
+		}
+		return rs;
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public @ResponseBody result update(article article){
+		if(ms.updateArticle(article)){
+			rs.setMsg("true");
+		}
+		return rs;
+	}
+	
+	@RequestMapping(value = "/getList", method = RequestMethod.GET)
+	public @ResponseBody List<Map<String,Object>> getList(int type){
+		return ms.getArticleList(type);
 	}
 
 	public boolean delFile(String url) {

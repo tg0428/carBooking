@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.wg.carbooking.service.baseService;
 import org.wg.carbooking.service.managerService;
 import org.wg.carbooking.vo.admin;
+import org.wg.carbooking.vo.article;
 import org.wg.carbooking.vo.car;
 import org.wg.carbooking.vo.carbook;
 import org.wg.carbooking.vo.typeOfCar;
@@ -82,6 +83,26 @@ public class manageServiceImpl extends baseService implements managerService {
 	@Override
 	public user GetUserBean(user user) {
 		return mUD.queryForUserBean(user);
+	}
+
+	@Override
+	public boolean addArticle(article article) {
+		return mAT.add(article);
+	}
+
+	@Override
+	public boolean delArticle(int id) {
+		return mAT.del(id);
+	}
+
+	@Override
+	public boolean updateArticle(article article) {
+		return mAT.update(article);
+	}
+
+	@Override
+	public List<Map<String, Object>> getArticleList(int type) {
+		return mAT.queryForArticleList(type);
 	}
 
 }

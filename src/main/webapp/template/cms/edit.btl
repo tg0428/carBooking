@@ -1,12 +1,14 @@
 <div style="margin:20px">
+	<input type="hidden" value="" id="article_type">
+	<input type="hidden" value="0" id="article_id">
 	<div class="am-form-group am-form-icon">
 		 <i class="am-icon-flag"></i>
-		 <input type="email" id="doc-ipt-3" class="am-form-field am-radius" placeholder="输入标题" required>
+		 <input type="text" id="title" class="am-form-field am-radius" placeholder="输入标题" required>
 	</div>
 	<div id="myEditor" style="height:350px;margin-bottom:10px"></div>
 	<div class="am-form-group am-form-icon">
     	<i class="am-icon-calendar"></i>
-  		<input type="text" id="time" class="am-form-field am-radius" placeholder="选择发布日期" required />
+  		<input type="text" id="time" class="am-form-field am-radius" placeholder="点击选择日期" required readonly/>
   	</div>
   	<p><button class="am-btn am-btn-primary am-animation-scale-down" id="publish"></button></p>
  </div>
@@ -14,11 +16,15 @@
         var ue = new baidu.editor.ui.Editor();
         ue.render("myEditor");   
         $(function(){
-        	$('#time').dateRangePicker(
-			{
-				autoClose: true,
-				singleDate : true,
-				showShortcuts: false 
+	        jeDate({
+	    		dateCell:"#time",
+	    		format:"YYYY年MM月DD日 hh:mm:ss",
+	   			isTime:true, 
+	    		minDate:"2014-09-19 00:00:00"
+			})
+			$("#publish").click(function(){
+				var content = ue.getContent();
+				publish.publishArticle(content);
 			});
         })
 </script>

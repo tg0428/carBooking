@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.wg.carbooking.vo.admin;
+import org.wg.carbooking.vo.article;
 import org.wg.carbooking.vo.car;
 import org.wg.carbooking.vo.carbook;
 import org.wg.carbooking.vo.typeOfCar;
@@ -94,4 +95,28 @@ public interface managerService {
 	 * @return
 	 */
 	public user GetUserBean(user user);
+	
+	/**添加文章
+	 * @param article
+	 * @return
+	 */
+	public boolean addArticle(article article);
+	
+	/**删除文章
+	 * @param id
+	 * @return
+	 */
+	public boolean delArticle(int id);
+	
+	/**更新文章
+	 * @param article
+	 * @return
+	 */
+	public boolean updateArticle(article article);
+	
+	/**获取列表
+	 * @param type
+	 * @return
+	 */
+	public List<Map<String,Object>> getArticleList(int type);
 }

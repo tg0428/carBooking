@@ -145,7 +145,8 @@ var init = {
 			        title: '操作',
 			        align: 'center',
 			        valign: 'middle',
-			        clickToSelect: false
+			        events: operateEvents,
+			        formatter:article_modify_del
 			    }],
 			    onClickRow: function (row) {
 			        //TODO
@@ -183,7 +184,8 @@ var init = {
 			        title: '操作',
 			        align: 'center',
 			        valign: 'middle',
-			        clickToSelect: false
+			        events: operateEvents,
+			        formatter:article_modify_del
 			    }],
 			    onClickRow: function (row) {
 			        //TODO
@@ -221,7 +223,8 @@ var init = {
 			        title: '操作',
 			        align: 'center',
 			        valign: 'middle',
-			        clickToSelect: false
+			        events: operateEvents,
+			        formatter:article_modify_del
 			    }],
 			    onClickRow: function (row) {
 			        //TODO
@@ -234,6 +237,7 @@ var switchArea = {
 	
 	showtable : function(){
 		$("#admin-content").hide();
+		$("#Table").bootstrapTable('refresh');
 		$("#tableArea").show();
 	},
 	showedit : function(){
@@ -258,16 +262,34 @@ $(function(){
 	$("#newslist").click(function(){
 		$("#Table").bootstrapTable('destroy');
 		switchArea.showtable();
-		init.news('/carBooking/cmsMg/getNewsList');
+		init.news('/carBooking/cmsMg/getList?type=4');
 	});
 	$("#activitylist").click(function(){
 		$("#Table").bootstrapTable('destroy');
 		switchArea.showtable();
-		init.activity('/carBooking/cmsMg/getActivityList');
+		init.activity('/carBooking/cmsMg/getList?type=5');
 	});
 	$("#noticelist").click(function(){
 		$("#Table").bootstrapTable('destroy');
 		switchArea.showtable();
-		init.notice('/carBooking/cmsMg/getNoticeList');
+		init.notice('/carBooking/cmsMg/getList?type=3');
+	});
+	
+	//-----------------------------------------------------
+	$("#notice_home").click(function(){
+		$("#Table").bootstrapTable('destroy');
+		init.notice('/carBooking/cmsMg/getList?type=3');
+	});
+	$("#car_home").click(function(){
+		$("#Table").bootstrapTable('destroy');
+		init.car('/carBooking/cmsMg/getCarList');
+	});
+	$("#news_home").click(function(){
+		$("#Table").bootstrapTable('destroy');
+		init.news('/carBooking/cmsMg/getList?type=4');
+	});
+	$("#activity_home").click(function(){
+		$("#Table").bootstrapTable('destroy');
+		init.activity('/carBooking/cmsMg/getList?type=5');
 	});
 })

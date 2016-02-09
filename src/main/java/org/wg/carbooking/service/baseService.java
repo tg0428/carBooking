@@ -3,6 +3,7 @@ package org.wg.carbooking.service;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.wg.carbooking.dao.adminDao;
+import org.wg.carbooking.dao.articleDao;
 import org.wg.carbooking.dao.carBookDao;
 import org.wg.carbooking.dao.carDao;
 import org.wg.carbooking.dao.typeOfCarDao;
@@ -16,6 +17,7 @@ public abstract class baseService {
 	public carBookDao mCBD;
 	public adminDao mAD;
 	public typeOfCarDao mTC;
+	public articleDao mAT;
 	
 	@Resource(name = "adminDaoImpl")
 	public void setmAD(adminDao mAD) {
@@ -40,5 +42,10 @@ public abstract class baseService {
 	@Resource(name = "typeOfCarDaoImpl")
 	public void setmTC(typeOfCarDao mTC) {
 		this.mTC = mTC;
+	}
+	
+	@Resource(name = "articleDaoImpl")
+	public void setmAD(articleDao mAT) {
+		this.mAT = mAT;
 	}
 }
