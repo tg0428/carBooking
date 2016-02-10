@@ -4,7 +4,15 @@
 var admin = {
 			
 			summary : function(){
-				admin.ObjectClick($("#summary"),"发布简介",1);
+				admin.ObjectClick($("#summary"),"发布简介",1,function(){
+					$.get("/carBooking/cmsMg/getList?type=1",function(data){
+						$("#article_type").val(1);
+						$("#article_id").val(data[0].article_id);
+						$("#title").val(data[0].article_title);
+						$("#time").val(data[0].article_time);
+						mUeditor.insert(data[0]);
+					});
+				});
 			},
 			activity : function(){
 				admin.ObjectClick($("#activity"),"发布活动",5);
@@ -13,7 +21,15 @@ var admin = {
 				admin.ObjectClick($("#notice"),"发布公告",3);
 			},
 			help : function(){
-				admin.ObjectClick($("#help"),"发布帮助信息",2);
+				admin.ObjectClick($("#help"),"发布帮助信息",2,function(){
+					$.get("/carBooking/cmsMg/getList?type=2",function(data){
+						$("#article_type").val(2);
+						$("#article_id").val(data[0].article_id);
+						$("#title").val(data[0].article_title);
+						$("#time").val(data[0].article_time);
+						mUeditor.insert(data[0]);
+					});
+				});
 			},
 			news : function(){
 				admin.ObjectClick($("#news"),"发布新闻",4);
@@ -73,9 +89,10 @@ var admin = {
 									$("#car-modal").modal('close');
 									init.car('/carBooking/cmsMg/getCarList');
 									$("#Table").bootstrapTable('refresh');
+								} else {
+									utils.showTips(data.msg);
 								}
-							},
-							clearForm : true
+							}
 						});
 					} else {
 						return;
@@ -120,13 +137,17 @@ var admin = {
 					return false;
 				}
 			},
-			ObjectClick : function(o, str, type){
+			ObjectClick : function(o, str, type, fn){
 				o.click(function(){	
 					$.get("/carBooking/edit",function(data){
 						switchArea.showedit();
 						$("#admin-content").html(data);
 						$("#publish").append(str);
 						$("#article_type").val(type);
+						//可在渲染页面结束后执行函数
+						if (fn && fn instanceof Function){
+							fn();
+						}
 					});
 				});
 			},

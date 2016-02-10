@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.wg.carbooking.vo.article;
 import org.wg.carbooking.vo.user;
 
 /**
@@ -13,6 +14,7 @@ import org.wg.carbooking.vo.user;
  * */
 @Controller
 public class IndexAction {
+	
 	@RequestMapping("/index.html")
 	public ModelAndView index() {
 		user user = new user();
@@ -32,10 +34,9 @@ public class IndexAction {
 		
 	}
 	
-	@RequestMapping("/edit")
-	public ModelAndView resource() {
+	@RequestMapping(value = "/edit")
+	public ModelAndView resource(article article) {
 		ModelAndView view = new ModelAndView();
-		view.addObject("TITLE", "ÐÂÎÅ");
 		view.setViewName("/template/cms/edit");
 		return view;
 	}

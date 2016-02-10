@@ -119,4 +119,11 @@ public interface managerService {
 	 * @return
 	 */
 	public List<Map<String,Object>> getArticleList(int type);
+	
+	/**获取文章实体
+	 * @param type
+	 * @param id
+	 * @return
+	 */
+	public article GetArticle(int type, int id);
 }

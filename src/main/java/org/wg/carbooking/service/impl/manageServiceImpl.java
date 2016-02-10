@@ -105,4 +105,9 @@ public class manageServiceImpl extends baseService implements managerService {
 		return mAT.queryForArticleList(type);
 	}
 
+	@Override
+	public article GetArticle(int type, int id) {
+		return mAT.queryForBean(type, id);
+	}
+
 }

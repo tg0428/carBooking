@@ -3,18 +3,27 @@
 	<input type="hidden" value="0" id="article_id">
 	<div class="am-form-group am-form-icon">
 		 <i class="am-icon-flag"></i>
-		 <input type="text" id="title" class="am-form-field am-radius" placeholder="输入标题" required>
+		 <input type="text" id="title" class="am-form-field am-radius" placeholder="输入标题" value=""required>
 	</div>
 	<div id="myEditor" style="height:350px;margin-bottom:10px"></div>
 	<div class="am-form-group am-form-icon">
     	<i class="am-icon-calendar"></i>
-  		<input type="text" id="time" class="am-form-field am-radius" placeholder="点击选择日期" required readonly/>
+  		<input type="text" id="time" class="am-form-field am-radius" placeholder="点击选择日期" value="" required readonly/>
   	</div>
   	<p><button class="am-btn am-btn-primary am-animation-scale-down" id="publish"></button></p>
  </div>
 <script type="text/javascript">
         var ue = new baidu.editor.ui.Editor();
-        ue.render("myEditor");   
+        ue.render("myEditor");
+        
+        var mUeditor = {
+        	insert : function(row){
+        		ue.ready(function(){
+        			ue.execCommand('insertHtml', row.article_content);
+        		});
+        	}
+        }  
+         
         $(function(){
 	        jeDate({
 	    		dateCell:"#time",

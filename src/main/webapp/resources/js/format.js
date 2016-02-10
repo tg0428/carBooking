@@ -10,14 +10,14 @@ function view_detail(value, row, index){
 
 function modify_del(value, row, index){
 	return [
-	        '<button id="modify" type="button" class="am-btn am-btn-warning am-round am-btn-xs">修改</button>',
-	        '<button id="del" type="button" class="am-btn am-btn-danger am-round am-btn-xs">删除</button>'
+	        '<button id="modify_car" type="button" class="am-btn am-btn-warning am-round am-btn-xs">修改</button>',
+	        '<button id="del_car" type="button" class="am-btn am-btn-danger am-round am-btn-xs">删除</button>'
 	        ].join('');
 }
 
 function article_modify_del(value, row, index){
 	return [
-	        '<button id="article_modify" type="button" class="am-btn am-btn-warning am-round am-btn-xs">修改</button>',
-	        '<button id="article_del" type="button" class="am-btn am-btn-danger am-round am-btn-xs">删除</button>'
+	        '<button id="modify_article" type="button" class="am-btn am-btn-warning am-round am-btn-xs">修改</button>',
+	        '<button id="del_article" type="button" class="am-btn am-btn-danger am-round am-btn-xs">删除</button>'
 	        ].join('');
 }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -117,6 +118,14 @@ public class cmsManageController {
 		return rs;
 	}
 	
+	@RequestMapping(value = "/delArticle", method = RequestMethod.POST)
+	public @ResponseBody result delArticle(article article) {
+		if (ms.delArticle(article.getArticle_id())) {
+			rs.setMsg("true");
+		}
+		return rs;
+	}
+	
 	@RequestMapping(value = "/publish", method = RequestMethod.POST)
 	public @ResponseBody result publish(article article){
 		if (ms.addArticle(article)){
@@ -142,4 +151,15 @@ public class cmsManageController {
 		File file = new File(url);
 		return file.delete();
 	}
+	
+	/**
+	 * 捕获图片上传异常信息，以json对象的形式返回result对象
+	 * */
+	@ExceptionHandler(Exception.class)       
+    public @ResponseBody result handleException(Exception ex,HttpServletRequest request) {     
+        if(ex instanceof org.springframework.web.multipart.MaxUploadSizeExceededException){  
+            rs.setMsg("图片上传大小不能超过2M"); 
+        }  
+        return rs;  
+    } 
 }

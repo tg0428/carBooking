@@ -30,8 +30,6 @@
   <!-- Amaze UI CSS -->
   <link rel="stylesheet" href="/carBooking/resources/amazeui/css/amazeui.min.css">
   <link rel="stylesheet" href="/carBooking/resources/amazeui/css/admin.css">
-  <link rel="stylesheet" href="${ctxPath}/resources/datatimepicker/css/daterangepicker.css" />
   <script src="${ctxPath}/resources/amazeui/js/jquery.min.js"></script>
   <script src="${ctxPath}/resources/amazeui/js/amazeui.min.js"></script>
   <script src="${ctxPath}/resources/amazeui/js/app.js"></script>
-  <script src="${ctxPath}/resources/jedate/jedate.js"></script>
