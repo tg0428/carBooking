@@ -48,6 +48,14 @@ var admin = {
 					admin.submitForm();
 				});
 			},
+			picManager : function(){
+				$("#picManager").click(function(){
+					$.get("/carBooking/cmsMg/getPictures",function(data){
+						switchArea.showedit();
+						$("#admin-content").html(data);
+					})
+				});
+			},
 			rest :　function(){
 				$("#car-modal").on('closed.modal.amui',function(){
 					$("#car_type").find("option").each(function(index){
@@ -165,6 +173,7 @@ var admin = {
 $(function(){
     admin.summary();
     admin.activity();
+    admin.picManager();	
     admin.notice();
     admin.help();
     admin.news();

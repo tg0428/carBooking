@@ -2,5 +2,5 @@
 	<div style="margin:20px" id="tableArea">
 		<table id="Table"></table>
 	</div>
-	<div id="admin-content"></div>
+	<div id="admin-content" style="min-height:500px"></div>
 </div>
