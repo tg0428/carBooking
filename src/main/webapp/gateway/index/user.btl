@@ -1,0 +1,30 @@
+<div class="am-tabs" data-am-tabs="{noSwipe: 1}" id="doc-tab-demo-1" style="overflow:hidden;height:300px">
+	  <ul class="am-tabs-nav am-nav am-nav-tabs" style="font-size:16px">
+	    <li class="am-active"><a href="javascript: void(0)">登录</a></li>
+	    <li><a href="javascript: void(0)">注册</a></li>
+	  </ul>
+
+  <div class="am-tabs-bd">
+    <div class="am-tab-panel am-active">
+      <form class="am-form">
+		  <input type="text" class="am-form-field am-radius" placeholder="账号" /><br>
+		  <input type="password" class="am-form-field am-radius" placeholder="密码" /><br>
+	
+		  <div class="am-cf">
+		      <button type="submit" class="am-btn am-btn-success am-btn-sm am-u-sm-centered">登&nbsp;&nbsp;录</button>
+		  </div>
+	  </form>
+    </div>
+    <div class="am-tab-panel">
+      <form class="am-form">
+		  <input type="text" class="am-form-field am-radius" placeholder="账号" style="margin:5px 0px 10px auto"/>
+		  <input type="password" class="am-form-field am-radius" placeholder="密码" style="margin-bottom:10px"/>
+		  <input type="password" class="am-form-field am-radius" placeholder="确认密码" style="margin-bottom:10px"/>
+		  <input type="email" class="am-form-field am-radius" placeholder="电子邮箱" style="margin-bottom:10px"/>
+		  <div class="am-cf">
+		      <button type="submit" class="am-btn am-btn-success am-btn-sm am-u-sm-centered">注&nbsp;&nbsp;册</button>
+		  </div>
+	  </form>
+    </div>
+   </div>
+</div>

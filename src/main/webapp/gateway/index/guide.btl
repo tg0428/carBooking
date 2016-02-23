@@ -1,0 +1,12 @@
+<section class="am-panel am-panel-primary" style="margin:0px 0px 0px 0px">
+	  <header class="am-panel-hd">
+	    <h3 class="am-panel-title" style="font-size:15px">租车向导</h3>
+	  </header>
+		<ul class="am-list am-list-border">
+  			<li><a href="#" class="am-text-truncate">厦门汽车租赁业受法律制约</a></li>
+  			<li><a href="#" class="am-text-truncate">省时省钱省力 爱车维修五大经验...</a></li>
+  			<li><a href="#" class="am-text-truncate">吉运通新闻</a></li>
+  			<li><a href="#" class="am-text-truncate">租车须掌握的基本行车常识</a></li>
+  			<li><a href="#" class="am-text-truncate">合作加盟</a></li>
+		</ul>
+	</section>

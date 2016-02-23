@@ -93,7 +93,6 @@ var table_method = {
 			var data = {'car_id' : row.car_id};
 			table_method.warning("确定要删除吗","删除不恢复","已删除",function(){
 				$.post("/carBooking/cmsMg/delCar",data,function(result){
-					if (result.msg == "true")
 						$("#Table").bootstrapTable('refresh');
 				});
 				return true;
@@ -136,6 +135,7 @@ var table_method = {
 				$("#article_id").val(row.article_id);
 				$("#title").val(row.article_title);
 				$("#time").val(row.article_time);
+				$("#priority").val(row.article_priority);
 				mUeditor.insert(row);
 			});
 		}

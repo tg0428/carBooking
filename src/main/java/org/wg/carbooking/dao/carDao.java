@@ -31,6 +31,12 @@ public interface carDao {
 	 */
 	public car queryForCarBean(String id); 
 	
+	/**按照优惠类型查询汽车
+	 * @param type
+	 * @return
+	 */
+	public List<car> queryForCarBean(int type);
+	
 	/**查询汽车列表
 	 * @return
 	 */

@@ -7,6 +7,10 @@
 	</div>
 	<div id="myEditor" style="height:350px;margin-bottom:10px"></div>
 	<div class="am-form-group am-form-icon">
+		 <i class="am-icon-star admin-icon-yellow"></i>
+		 <input type="text" id="priority" class="am-form-field am-radius" placeholder="设置优先级(默认为0)" required>
+	</div>
+	<div class="am-form-group am-form-icon">
     	<i class="am-icon-calendar"></i>
   		<input type="text" id="time" class="am-form-field am-radius" placeholder="点击选择日期" value="" required readonly/>
   	</div>

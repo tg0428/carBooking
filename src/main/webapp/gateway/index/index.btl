@@ -1,0 +1,80 @@
+%
+	var headContent = {
+		include("/template/head.btl"){}
+		include("/gateway/resources.btl"){}
+	};
+	var bodyContent = {
+		include("/gateway/head.btl"){}
+		include("/gateway/index/contact.btl"){}
+%
+<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+  <div class="am-u-sm-8" style="background-color:#F1F1F1;padding-left: 0rem;
+	padding-right: 0rem;border:1px solid #E1E1E1;">
+	%
+	include("/gateway/index/recommend.btl"){}
+	%
+  </div>
+  <div class="am-u-sm-4" style="padding-left: 1rem;
+	padding-right: 0rem;">
+	%
+	include("/gateway/index/user.btl"){}
+	%
+  </div>
+</div>
+<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+  <div class="am-u-sm-3" style="background-color:#F1F1F1;padding-left: 0rem;
+	padding-right: 0.5rem;">
+	%
+	include("/gateway/index/notice.btl"){}
+	%
+  </div>
+  <div class="am-u-sm-6" style="background-color:#F1F1F1;padding-left: 0.5rem;
+	padding-right: 0.5rem;">
+	%
+	include("/gateway/index/new.btl"){}
+	%
+  </div>
+  <div class="am-u-sm-3" style="background-color:#F1F1F1;padding-left: 0.5rem;
+	padding-right: 0rem;">
+  	%
+	include("/gateway/index/activity.btl"){}
+	%
+  </div>
+</div>
+<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+  <div class="am-u-sm-3" style="background-color:#F1F1F1;padding-left: 0rem;
+	padding-right: 0.5rem;">
+	%
+	include("/gateway/index/Selected.btl"){}
+	%
+  </div>
+  <div class="am-u-sm-9" style="background-color:#F1F1F1;padding-left: 0.5rem;
+	padding-right: 0rem;">
+	%
+	include("/gateway/index/guide.btl"){}
+	%
+  </div>
+</div>
+<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+	<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;
+	padding-right: 0rem;border:1px solid #E1E1E1;">
+	%
+	include("/gateway/index/link.btl"){}
+	%
+	</div>
+</div>
+<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+	<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;
+	padding-right: 0rem;border:1px solid #E1E1E1;">
+	%
+	include("/gateway/foot.btl"){}
+	%
+	</div>
+</div>
+%
+		
+	};
+%
+%
+ layout("/template/layout.btl",{head:headContent,body:bodyContent}){}
+%

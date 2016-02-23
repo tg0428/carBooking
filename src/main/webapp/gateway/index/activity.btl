@@ -1,0 +1,14 @@
+<section class="am-panel am-panel-primary" style="margin:0px 0px 0px 0px">
+	  <header class="am-panel-hd">
+	    <h3 class="am-panel-title" style="font-size:15px">爱鹭美活动</h3>
+	  </header>
+	    <ul class="am-list am-list-border">
+  		%
+	   		for (activity in activities){
+	   		%
+	   			<li><a href="${ctxPath}/detail.html?type=${activity.article_type}&id=${activity.article_id}" class="am-text-truncate">${activity.article_title}</a></li>
+	   		%
+	   		}
+	    %
+		</ul>
+	</section>

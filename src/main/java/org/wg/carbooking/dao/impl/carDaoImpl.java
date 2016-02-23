@@ -69,4 +69,10 @@ public class carDaoImpl extends baseDao<car>implements carDao {
 		return queryForList(sql);
 	}
 
+	@Override
+	public List<car> queryForCarBean(int type) {
+		String sql = "select *,B.type_detail from `dbo.car` as A left join `dbo.typeofcar` as B on A.car_type=B.type_id where B.type_id = ?";
+		return queryForList(car.class, sql, new Object[]{type});
+	}
+
 }

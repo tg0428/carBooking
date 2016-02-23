@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+.t-welcome {
+	background-color: #F1F1F1;
+	height: 30px;
+	border-bottom: 1px solid #E1E1E1;
+}
+
+.t-welcome-content {
+	width: 978px;
+	position: relative;
+	margin: -10px auto 10px;
+}
+
+.t-tip {
+	padding-top: 0.5rem;
+	float: left;
+}
+
+.t-call {
+	padding-top: 0.5rem;
+	float: right;
+}
+
+.am-tabs-bd .am-tab-panel {
+	-webkit-transition: -webkit-transform 0.0001s;
+	transition: transform 0.0001s;
+}
+
+.t-foot {
+	font-size: 1.2rem;
+	margin: 1rem 1.5rem 1rem 1.5rem;
+}
+
+.t-foot a {
+	margin: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.contact {
+	top: 480px;
+	right: 7px;
+	position: fixed;
+	border: 1px solid #E1E1E1;
+	padding: 3px 3px 3px 3px;
+}
+
+#i-title {
+	font-size:15px;
+}

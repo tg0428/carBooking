@@ -2,7 +2,7 @@
 	<div class="am-offcanvas-bar admin-offcanvas-bar">
 		<ul class="am-list admin-sidebar-list" id="collapase-nav-1">
 		  <li  class="am-panel">
-		    <a style="text-decoration:none" data-am-collapse="{parent: '#collapase-nav-1'}" href="javascript:void(0)"><i class="am-icon-home am-margin-left-sm"></i> 首页</a>
+		    <a style="text-decoration:none" href="${ctxPath}/index.html" target="blank"><i class="am-icon-home am-margin-left-sm"></i> 首页</a>
 		  </li>
 		  
 		  <li  class="am-panel">

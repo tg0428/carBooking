@@ -110,4 +110,14 @@ public class manageServiceImpl extends baseService implements managerService {
 		return mAT.queryForBean(type, id);
 	}
 
+	@Override
+	public List<car> GetCarOfType(int type) {
+		return mCD.queryForCarBean(type);
+	}
+
+	@Override
+	public List<Map<String, Object>> getArticleList(int type, int num) {
+		return mAT.queryForArticleList(type, num);
+	}
+
 }

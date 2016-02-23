@@ -120,10 +120,23 @@ public interface managerService {
 	 */
 	public List<Map<String,Object>> getArticleList(int type);
 	
+	/**获取文章列表前num条
+	 * @param type
+	 * @param num
+	 * @return
+	 */
+	public List<Map<String,Object>> getArticleList(int type, int num);
+	
 	/**获取文章实体
 	 * @param type
 	 * @param id
 	 * @return
 	 */
 	public article GetArticle(int type, int id);
+	
+	/**获取优惠类型车辆
+	 * @param type
+	 * @return
+	 */
+	public List<car> GetCarOfType(int type);
 }

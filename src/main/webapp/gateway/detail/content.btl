@@ -1,0 +1,11 @@
+<div style="min-height:400px"><article class="am-article">
+  <div class="am-article-hd">
+    <h1 class="am-article-title">${bean.article_title}</h1>
+    <p class="am-article-meta">发布时间 ： ${bean.article_time}</p>
+  </div>
+
+  <div class="am-article-bd">
+    <hr class="am-article-divider"></hr>
+    <p>${bean.article_content}</p>
+  </div>
+</article></div>

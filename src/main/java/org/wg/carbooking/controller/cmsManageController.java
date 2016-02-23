@@ -60,6 +60,12 @@ public class cmsManageController {
 	@RequestMapping(value = "/delType")
 	public @ResponseBody result delType(String type_id) {
 		result rs = result.getInstance();
+		List<car> mcl = ms.GetCarOfType(Integer.parseInt(type_id));
+
+		/** 删除优惠类型车辆图片存盘信息 */
+		for (car car : mcl) {
+			delFile(car.getImage_url());
+		}
 		if (ms.DelType(Integer.parseInt(type_id))) {
 			rs.setMsg("true");
 		}
@@ -78,10 +84,10 @@ public class cmsManageController {
 			/** 将获取到的多媒体文件流拷贝到项目本地upload目录中 */
 
 			FileUtils.copyInputStreamToFile(file.getInputStream(),
-					new File(destinationDir, timeStamp + file.getOriginalFilename()));
-			car.setImage_url(destinationDir + "\\" + timeStamp + file.getOriginalFilename());
+					new File(destinationDir, timeStamp + file.getContentType().replace("image/", ".")));
+			car.setImage_url(destinationDir + "\\" + timeStamp + file.getContentType().replace("image/", "."));
 			car.setImage_server_url(req.getSession().getServletContext().getContextPath() + "/upload/" + timeStamp
-					+ file.getOriginalFilename());
+					+ file.getContentType().replace("image/", "."));
 		}
 
 		ms.AddCar(car);
@@ -97,41 +103,41 @@ public class cmsManageController {
 
 		if (file != null) {
 
-			/** 1.删除旧图片*/
+			/** 1.删除旧图片 */
 			delFile(ms.GetCarBean(car.getCar_id()).getImage_url());
 			/** 2.将获取到的多媒体文件流拷贝到项目本地upload目录中 */
 
 			FileUtils.copyInputStreamToFile(file.getInputStream(),
-					new File(destinationDir, timeStamp + file.getOriginalFilename()));
-			car.setImage_url(destinationDir + "\\" + timeStamp + file.getOriginalFilename());
+					new File(destinationDir, timeStamp + file.getContentType().replace("image/", ".")));
+			car.setImage_url(destinationDir + "\\" + timeStamp + file.getContentType().replace("image/", "."));
 			car.setImage_server_url(req.getSession().getServletContext().getContextPath() + "/upload/" + timeStamp
-					+ file.getOriginalFilename());
+					+ file.getContentType().replace("image/", "."));
 		}
 		ms.UpdCar(car);
 		rs.setMsg("true");
 		return rs;
 	}
-	
+
 	@RequestMapping(value = "/getPictures")
-	public ModelAndView getPictures(HttpServletRequest req) throws IOException{
+	public ModelAndView getPictures(HttpServletRequest req) throws IOException {
 		String url = req.getSession().getServletContext().getRealPath("/ueditor");
 		List<String> fileUrls = pictureCatch.getServerPicturePaths(url);
 		List<String> serverPictures = new ArrayList<String>();
 		for (String s : fileUrls) {
 			String str = s.substring(s.indexOf("\\ueditor"), s.length()).replace("\\", "/");
-			serverPictures.add(req.getSession().getServletContext().getContextPath()+str);
+			serverPictures.add(req.getSession().getServletContext().getContextPath() + str);
 		}
 		ModelAndView view = new ModelAndView();
 		view.addObject("pictures", serverPictures);
 		view.setViewName("/template/cms/picList");
 		return view;
 	}
-	
-	@RequestMapping(value = "/delPic",method = RequestMethod.POST)
-	public @ResponseBody result delPic(String url,HttpServletRequest req) throws IOException{
+
+	@RequestMapping(value = "/delPic", method = RequestMethod.POST)
+	public @ResponseBody result delPic(String url, HttpServletRequest req) throws IOException {
 		String filePath = req.getSession().getServletContext().getRealPath(url);
 		System.out.println(filePath);
-		if (delFile(filePath)){
+		if (delFile(filePath)) {
 			rs.setMsg("true");
 		}
 		return rs;
@@ -145,7 +151,7 @@ public class cmsManageController {
 		}
 		return rs;
 	}
-	
+
 	@RequestMapping(value = "/delArticle", method = RequestMethod.POST)
 	public @ResponseBody result delArticle(article article) {
 		if (ms.delArticle(article.getArticle_id())) {
@@ -153,25 +159,25 @@ public class cmsManageController {
 		}
 		return rs;
 	}
-	
+
 	@RequestMapping(value = "/publish", method = RequestMethod.POST)
-	public @ResponseBody result publish(article article){
-		if (ms.addArticle(article)){
+	public @ResponseBody result publish(article article) {
+		if (ms.addArticle(article)) {
 			rs.setMsg("true");
 		}
 		return rs;
 	}
-	
+
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public @ResponseBody result update(article article){
-		if(ms.updateArticle(article)){
+	public @ResponseBody result update(article article) {
+		if (ms.updateArticle(article)) {
 			rs.setMsg("true");
 		}
 		return rs;
 	}
-	
+
 	@RequestMapping(value = "/getList", method = RequestMethod.GET)
-	public @ResponseBody List<Map<String,Object>> getList(int type){
+	public @ResponseBody List<Map<String, Object>> getList(int type) {
 		return ms.getArticleList(type);
 	}
 
@@ -179,15 +185,15 @@ public class cmsManageController {
 		File file = new File(url);
 		return file.delete();
 	}
-	
+
 	/**
 	 * 捕获图片上传异常信息，以json对象的形式返回result对象
-	 * */
-	@ExceptionHandler(Exception.class)       
-    public @ResponseBody result handleException(Exception ex,HttpServletRequest request) {     
-        if(ex instanceof org.springframework.web.multipart.MaxUploadSizeExceededException){  
-            rs.setMsg("图片上传大小不能超过2M"); 
-        }  
-        return rs;  
-    } 
+	 */
+	@ExceptionHandler(Exception.class)
+	public @ResponseBody result handleException(Exception ex, HttpServletRequest request) {
+		if (ex instanceof org.springframework.web.multipart.MaxUploadSizeExceededException) {
+			rs.setMsg("图片上传大小不能超过2M");
+		}
+		return rs;
+	}
 }

@@ -32,6 +32,13 @@ public interface articleDao {
 	 */
 	public List<Map<String,Object>> queryForArticleList(int type);
 	
+	/**获取文章前num条
+	 * @param type
+	 * @param num
+	 * @return
+	 */
+	public List<Map<String,Object>> queryForArticleList(int type, int num);
+	
 	/**获取文章对象
 	 * @param id
 	 * @return

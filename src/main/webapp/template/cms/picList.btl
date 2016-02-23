@@ -1,6 +1,7 @@
 <div class="am-cf am-padding">
       <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">图片管理</strong> / 
-      <small>Gallery&nbsp;&nbsp;<span style="font-size:14px;color:red">(*点击图片可进行删除操作)</span></small></div>
+      <small>Gallery&nbsp;&nbsp;<span style="font-size:14px;color:red">(*点击图片可进行删除操作)</span> / 
+      <span style="font-size:14px;color:red">【该处包括文章发布中的所有图片】</span></small></div>
     </div>
     
     <ul class="am-avg-sm-2 am-avg-md-4 am-avg-lg-6 am-margin gallery-list">

@@ -80,6 +80,7 @@
 		<property name="viewNames">
 			<list>
 				<value>/admin/**</value>
+				<value>/gateway/**</value>
 			</list>
 		</property>
 		<property name="suffix" value=".btl" />

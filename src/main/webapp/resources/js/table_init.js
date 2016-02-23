@@ -124,7 +124,7 @@ var init = {
 			    pageList: [10, 25, 50, 100, 200], // 自定义分页列表
 			    minimumCountColumns: 2, // 设置最少显示列个数
 			    clickToSelect: false, // 单击行即可以选中
-			    sortName: 'id', // 设置默认排序为 name
+			    sortName: 'article_priority', // 设置默认排序为 name
 			    sortOrder: 'desc', // 设置排序为反序 desc
 			    smartDisplay: true, // 智能显示 pagination 和 cardview 等
 			    columns: [{ // 列设置
@@ -138,6 +138,11 @@ var init = {
 			    }, {
 			        field: 'article_time',
 			        title: '发布时间',
+			        align: 'left',
+			        valign: 'top'
+			    }, {
+			        field: 'article_priority',
+			        title: '优先级',
 			        align: 'left',
 			        valign: 'top'
 			    }, {
@@ -163,7 +168,7 @@ var init = {
 			    pageList: [10, 25, 50, 100, 200], // 自定义分页列表
 			    minimumCountColumns: 2, // 设置最少显示列个数
 			    clickToSelect: false, // 单击行即可以选中
-			    sortName: 'id', // 设置默认排序为 name
+			    sortName: 'article_priority', // 设置默认排序为 name
 			    sortOrder: 'desc', // 设置排序为反序 desc
 			    smartDisplay: true, // 智能显示 pagination 和 cardview 等
 			    columns: [{ // 列设置
@@ -179,7 +184,12 @@ var init = {
 			        title: '发布时间',
 			        align: 'left',
 			        valign: 'top'
-			    }, {
+			    },{
+			        field: 'article_priority',
+			        title: '优先级',
+			        align: 'left',
+			        valign: 'top'
+			    },{
 			        field: 'operate',
 			        title: '操作',
 			        align: 'center',
@@ -202,7 +212,7 @@ var init = {
 			    pageList: [10, 25, 50, 100, 200], // 自定义分页列表
 			    minimumCountColumns: 2, // 设置最少显示列个数
 			    clickToSelect: false, // 单击行即可以选中
-			    sortName: 'id', // 设置默认排序为 name
+			    sortName: 'article_priority', // 设置默认排序为 name
 			    sortOrder: 'desc', // 设置排序为反序 desc
 			    smartDisplay: true, // 智能显示 pagination 和 cardview 等
 			    columns: [{ // 列设置
@@ -218,7 +228,12 @@ var init = {
 			        title: '发布时间',
 			        align: 'left',
 			        valign: 'top'
-			    }, {
+			    },{
+			        field: 'article_priority',
+			        title: '优先级',
+			        align: 'left',
+			        valign: 'top'
+			    },{
 			        field: 'operate',
 			        title: '操作',
 			        align: 'center',
