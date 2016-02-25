@@ -1,0 +1,85 @@
+%
+	var headContent = {
+		include("/template/head.btl"){}
+		include("/gateway/resources.btl"){}
+%
+<script type="text/javascript">
+	
+	$(function(){
+		var initPagination = function(){
+			$("#News-Pagination").pagination(${carlist.totalRecord}, {
+		        items_per_page:${carlist.pageSize}, // 每页显示多少条记录
+		        current_page:${carlist.currentNum} - 1, // 当前显示第几页数据
+		        num_display_entries:8, // 分页显示的条目数
+		        next_text:"下一页",
+		        prev_text:"上一页",
+		        num_edge_entries:2, // 连接分页主体，显示的条目数
+		        callback:pageselectCallback
+			});
+		}();
+		// 点击分页按钮以后触发的动作
+		function pageselectCallback(page_index, jq) {
+			$("input[name=pageNum]").val(page_index+1);
+			$("#page").attr("action","${ctxPath}/cardiscount.html");
+			$("#page").submit();
+			return false;
+		}
+	});
+</script>
+%
+	};
+	var bodyContent = {
+		include("/gateway/head.btl"){}
+		include("/gateway/index/contact.btl"){}
+%
+	<div class="more">
+		<span class="t" style="font-size:16px;">车型车价</span>
+		<span class="t" style="float:right;">扫描右下角二维码关注官方微信获取更多优惠信息&nbsp;<span class="am-icon-btn am-icon-btn-sm am-success am-icon-weixin"></span></span>
+	</div>
+	<div class="am-g" style="padding:0px 3px 3px 3px;width:978px;position:relative;margin:0 auto 10px;border:1px solid #E1E1E1;">
+		<div class="car-title">
+			<div class="tips">
+				<strong style="font-size:15px;color:#0b7cb7">当前优惠类型</strong>&nbsp;&nbsp;&nbsp;
+				<span class="am-badge am-badge-secondary am-text-sm am-round">${discount.type_detail}</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font>点击查看其他火热优惠类型</font> 
+				%
+					for (car in discounts){
+					%
+						<a href="${ctxPath}/cardiscount.html?pageNum=1&type=${car.type_id}" class="am-badge am-badge-warning am-text-sm am-round">${car.type_detail}</a>
+					%
+					}
+				%
+			</div>
+		</div>
+		<hr></hr>
+		%
+		include("/gateway/list/car/discount_car.btl"){}
+		%
+		<div id="News-Pagination" class="msdn"></div>
+	</div>
+	<form action="" method="get" id="page">
+		<input type="hidden" name="pageNum">
+		<input type="hidden" name="type" value=${discount.type_id}>
+	</form>
+	<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+		<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;
+		padding-right: 0rem;border:1px solid #E1E1E1;">
+		%
+		include("/gateway/index/link.btl"){}
+		%
+		</div>
+	</div>
+	<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+		<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;
+		padding-right: 0rem;border:1px solid #E1E1E1;">
+		%
+		include("/gateway/foot.btl"){}
+		%
+		</div>
+	</div>
+%
+	};
+%
+%
+ layout("/template/layout.btl",{head:headContent,body:bodyContent}){}
+%

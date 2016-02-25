@@ -5,8 +5,8 @@
     </div>
     
     <ul class="am-avg-sm-2 am-avg-md-4 am-avg-lg-6 am-margin gallery-list">
-    @if (pictures.~size == 0){
-    	@
+    #if (pictures.~size == 0){
+    	#
 			<div class="am-g">
       			<div class="am-u-sm-12">
         			<h2 class="am-text-center am-text-xxxl am-margin-top-lg"><p style="color:#9ACD32"><i class="am-icon-file-image-o"></i> 暂无图片</p></h2>
@@ -15,17 +15,17 @@
 				      </div>
 				    </div>
 				  </div>
-		@
+		#
     } else for(url in pictures){
-			@
+			#
 				<li>
 				    <a href="javascript:void(0)" onclick="del_pic(this)">
 						<img class="am-img-thumbnail am-img-bdrs" src="${url}" alt="${url}"/>
 						<div class="gallery-title">点击链接删除图片</div>
 				    </a>
 				</li>
-		    @
-		}@
+		    #
+		}#
 	</ul>
 	
 	<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">

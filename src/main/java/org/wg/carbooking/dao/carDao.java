@@ -3,6 +3,7 @@ package org.wg.carbooking.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.wg.carbooking.model.pager;
 import org.wg.carbooking.vo.car;
 
 public interface carDao {
@@ -41,4 +42,13 @@ public interface carDao {
 	 * @return
 	 */
 	public List<Map<String,Object>> queryForCarList();
+	
+	/** 汽车列表分页
+	 * @param pageNum
+	 * @param pageSize
+	 * @return
+	 */
+	public pager<Map<String,Object>> paginationForCar(int pageNum, int pageSize);
+	
+	public pager<Map<String,Object>> paginationForCar(int pageNum, int pageSize, int type);
 }

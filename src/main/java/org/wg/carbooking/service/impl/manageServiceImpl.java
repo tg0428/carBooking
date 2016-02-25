@@ -2,7 +2,9 @@ package org.wg.carbooking.service.impl;
 
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.stereotype.Service;
+import org.wg.carbooking.model.pager;
 import org.wg.carbooking.service.baseService;
 import org.wg.carbooking.service.managerService;
 import org.wg.carbooking.vo.admin;
@@ -14,7 +16,7 @@ import org.wg.carbooking.vo.user;
 
 @Service("managerService")
 public class manageServiceImpl extends baseService implements managerService {
-	
+
 	@Override
 	public boolean Login(user user) {
 		return mUD.search(user);
@@ -118,6 +120,16 @@ public class manageServiceImpl extends baseService implements managerService {
 	@Override
 	public List<Map<String, Object>> getArticleList(int type, int num) {
 		return mAT.queryForArticleList(type, num);
+	}
+
+	@Override
+	public pager<Map<String, Object>> GetCarList(int pageNum, int pageSize) {
+		return mCD.paginationForCar(pageNum, pageSize);
+	}
+
+	@Override
+	public pager<Map<String, Object>> GetCarList(int pageNum, int pageSize, int type) {
+		return mCD.paginationForCar(pageNum, pageSize, type);
 	}
 
 }

@@ -1,0 +1,72 @@
+%
+	var headContent = {
+		include("/template/head.btl"){}
+		include("/gateway/resources.btl"){}
+%
+<script type="text/javascript">
+	
+	$(function(){
+		var initPagination = function(){
+			$("#News-Pagination").pagination(${carlist.totalRecord}, {
+		        items_per_page:${carlist.pageSize}, // 每页显示多少条记录
+		        current_page:${carlist.currentNum} - 1, // 当前显示第几页数据
+		        num_display_entries:8, // 分页显示的条目数
+		        next_text:"下一页",
+		        prev_text:"上一页",
+		        num_edge_entries:2, // 连接分页主体，显示的条目数
+		        callback:pageselectCallback
+			});
+		}();
+		// 点击分页按钮以后触发的动作
+		function pageselectCallback(page_index, jq) {
+			$("input[name=pageNum]").val(page_index+1);
+			$("#page").attr("action","${ctxPath}/carlist.html");
+			$("#page").submit();
+			return false;
+		}
+	});
+</script>
+%
+	};
+	var bodyContent = {
+		include("/gateway/head.btl"){}
+		include("/gateway/index/contact.btl"){}
+%
+	<div class="am-g" style="padding:0px 3px 3px 3px;width:978px;position:relative;margin:0 auto 10px;border:1px solid #E1E1E1;">
+		<div class="car-title">
+			<div class="tips">
+				<strong style="font-size:15px;color:#0b7cb7">全部车型</strong> 
+				<font style="font-size:15px;">车型展示<font>
+			</div>
+		</div>
+		<hr></hr>
+		%
+		include("/gateway/list/car/single_car.btl"){}
+		%
+		<div id="News-Pagination" class="msdn"></div>
+	</div>
+	<form action="" method="get" id="page">
+		<input type="hidden" name="pageNum">
+	</form>
+	<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+		<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;
+		padding-right: 0rem;border:1px solid #E1E1E1;">
+		%
+		include("/gateway/index/link.btl"){}
+		%
+		</div>
+	</div>
+	<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+		<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;
+		padding-right: 0rem;border:1px solid #E1E1E1;">
+		%
+		include("/gateway/foot.btl"){}
+		%
+		</div>
+	</div>
+%
+	};
+%
+%
+ layout("/template/layout.btl",{head:headContent,body:bodyContent}){}
+%

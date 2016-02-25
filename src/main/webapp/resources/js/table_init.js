@@ -14,7 +14,7 @@ var init = {
 			    pageList: [10, 25, 50, 100, 200], // 自定义分页列表
 			    minimumCountColumns: 2, // 设置最少显示列个数
 			    clickToSelect: false, // 单击行即可以选中
-			    sortName: 'id', // 设置默认排序为 name
+			    sortName: 'car_id', // 设置默认排序为 car_id
 			    sortOrder: 'desc', // 设置排序为反序 desc
 			    smartDisplay: true, // 智能显示 pagination 和 cardview 等
 			    columns: [{ // 列设置

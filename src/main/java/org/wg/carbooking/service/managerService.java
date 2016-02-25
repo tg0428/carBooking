@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.wg.carbooking.model.pager;
 import org.wg.carbooking.vo.admin;
 import org.wg.carbooking.vo.article;
 import org.wg.carbooking.vo.car;
@@ -79,6 +80,21 @@ public interface managerService {
 	 */
 	public List<Map<String,Object>> GetCarList();
 	
+	/**分页获取汽车列表
+	 * @param pageNum
+	 * @param pageSize
+	 * @return
+	 */
+	public pager<Map<String,Object>> GetCarList(int pageNum, int pageSize);
+	
+	/**分页获取相应优惠类型汽车列表
+	 * @param pageNum
+	 * @param pageSize
+	 * @param type
+	 * @return
+	 */
+	public pager<Map<String,Object>> GetCarList(int pageNum, int pageSize, int type);
+	
 	/**获取用户管理列表
 	 * @return
 	 */
@@ -139,4 +155,5 @@ public interface managerService {
 	 * @return
 	 */
 	public List<car> GetCarOfType(int type);
+	
 }

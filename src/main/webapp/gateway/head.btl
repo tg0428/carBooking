@@ -8,8 +8,8 @@
     <div class="publicNav_nav">
         <p><a href="${ctxPath}/index.html" class="currHover">首页</a></p>
         <p class="hot"><a href="http://www.baidu.com/" class="currHover">在线租车</a></p>
-        <p><a href="http://sc.woofeng.cn/" class="currHover">特惠车型</a></p>
-        <p><a href="http://sc.woofeng.cn/" class="currHover">车型价格</a></p>
+        <p><a href="${ctxPath}/cardiscount.html?pageNum=1&type=0" class="currHover">特惠车型</a></p>
+        <p><a href="${ctxPath}/carlist.html?pageNum=1" class="currHover">车型价格</a></p>
         <p class="new"><a href="${ctxPath}/detail.html?type=1&id=0" class="currHover">公司简介</a></p>
         <p><a href="${ctxPath}/detail.html?type=2&id=0" class="currHover">帮助中心</a></p>
         <div class="publicNavHover">
@@ -34,12 +34,14 @@ $(function(){
 	var currNav;
 	if(navTab('flight.118114.cn')){
 			currNav=1;$(".currHover").eq(currNav).addClass("hover");
-		}else if(navTab('hotel.118114.cn')){
+		}else if(navTab('${ctxPath}/cardiscount.html')){
 			currNav=2;$(".currHover").eq(currNav).addClass("hover");
-		}else if(navTab('you.118114.cn')){
+		}else if(navTab('${ctxPath}/carlist.html')){
 			currNav=3;$(".currHover").eq(currNav).addClass("hover");
-		}else if(navTab('food.118114.cn')){
+		}else if(navTab('${ctxPath}/detail.html?type=1&id=0')){
 			currNav=4;$(".currHover").eq(currNav).addClass("hover");
+		}else if(navTab('${ctxPath}/detail.html?type=2&id=0')){
+			currNav=5;$(".currHover").eq(currNav).addClass("hover");
 		}else{
 			currNav=0;$(".currHover").eq(currNav).addClass("hover");
 	}
@@ -86,5 +88,9 @@ function addSubNav(obj){
 	}
 	html+="</div>";
 	$("#publicNav").after(html);
+}
+
+function discount(){
+	$('.am-alert').alert()
 }
 </script>

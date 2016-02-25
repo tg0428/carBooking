@@ -1,0 +1,40 @@
+	<div class="am-u-sm-12" style="background-color:#FFFFF;padding-left: 0rem;
+		padding-right: 0rem;">
+		%
+			for (car in carlist.source){
+				%
+				<div class="am-u-sm-6" style="padding:0px 8px 3px 8px;">
+					<div class="am-panel am-panel-default">
+			    		<div class="am-panel-bd">
+			    			<div class="am-g">
+							  <div class="am-u-sm-4">
+							  	<img src="${car.image_server_url!"/carBooking/resources/index/images/150-100.gif"}" 
+							  			width=150 height=155 style="border:1px solid #E1E1E1;padding:2px 2px 2px 2px">
+							  </div>
+							  <div class="am-u-sm-8" style="padding-left:2.5rem">
+							  	<ul class="car-list">
+  									<li><strong>车辆名称：</strong> <font size=2>${car.car_name}</font></li>
+  									%
+  										if (strutil.length(car.car_detail) > 70){
+  										%
+  										<li><strong>车况信息：</strong> <font size=2>${strutil.subStringTo(car.car_detail,0,70)}....<a href="#">查看更多</a></font></li>
+  										%
+  										} else {
+  										%
+  										<li><strong>车况信息：</strong> <font size=2>${car.car_detail}</font></li>
+  										%
+  										}
+  									%
+  									<li><strong>门市价：</strong> <font size=2>￥${car.retail_price}/天</font></li>
+  									<li><strong>会员价：</strong> <strong style="font-size:15px;color:red">￥${car.leaguer_price}/天</strong></li>
+								</ul>
+								<button type="button" class="am-btn am-btn-primary am-btn-sm am-round" style="float:right;margin-top:1.5rem">开始预订</button>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				%
+			}
+		%
+	</div>

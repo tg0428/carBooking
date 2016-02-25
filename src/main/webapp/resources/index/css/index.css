@@ -28,12 +28,13 @@
 }
 
 .t-foot {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	margin: 1rem 1.5rem 1rem 1.5rem;
 }
 
 .t-foot a {
 	margin: 0.5rem 1rem 0.5rem 1rem;
+	display: inline-block;
 }
 
 .contact {
@@ -45,5 +46,54 @@
 }
 
 #i-title {
-	font-size:15px;
+	font-size: 15px;
+}
+
+.car-title {
+	height: 50px;
+	line-height: 50px;
+	background: url("../images/b01.png");
+	background-repeat: x;
+	margin: 0px 0px 0px 0px;
+}
+
+.car-title .tips {
+	padding-left: 10px;
+}
+
+.car-list {
+	height: 100px;
+	padding-top: 0px;
+}
+
+.car-list strong {
+	font-size: 14px;
+	color: #0b7cb7;
+}
+
+.car-list font {
+	color: #8B6969;
+}
+
+.car-list li {
+	padding: 3px 0px 3px 0px;
+}
+
+.more {
+	height: 42px;
+	line-height : 42px;
+	padding: 0px 3px 3px 3px;
+	width: 978px;
+	position: relative;
+	margin: 0 auto 10px;
+	background-color: #fdd310;
+}
+
+.t {
+	padding-left : 10px;
+	padding-right: 30px;
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: middle;
 }
