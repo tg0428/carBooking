@@ -22,33 +22,33 @@
   </div>
 </div>
 <div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
-  <div class="am-u-sm-3" style="background-color:#F1F1F1;padding-left: 0rem;
-	padding-right: 0.5rem;">
-	%
-	include("/gateway/index/notice.btl"){}
-	%
-  </div>
-  <div class="am-u-sm-6" style="background-color:#F1F1F1;padding-left: 0.5rem;
+  <div class="am-u-sm-3" style="background-color:#FFFFFF;padding-left: 0rem;
 	padding-right: 0.5rem;">
 	%
 	include("/gateway/index/new.btl"){}
 	%
   </div>
-  <div class="am-u-sm-3" style="background-color:#F1F1F1;padding-left: 0.5rem;
+  <div class="am-u-sm-6" style="background-color:#FFFFFF;padding-left: 0.5rem;
+	padding-right: 0.5rem;">
+	%
+	include("/gateway/index/activity.btl"){}
+	%
+  </div>
+  <div class="am-u-sm-3" style="background-color:#FFFFFF;padding-left: 0.5rem;
 	padding-right: 0rem;">
   	%
-	include("/gateway/index/activity.btl"){}
+	include("/gateway/index/notice.btl"){}
 	%
   </div>
 </div>
 <div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
-  <div class="am-u-sm-3" style="background-color:#F1F1F1;padding-left: 0rem;
+  <div class="am-u-sm-3" style="background-color:#FFFFFF;padding-left: 0rem;
 	padding-right: 0.5rem;">
 	%
 	include("/gateway/index/Selected.btl"){}
 	%
   </div>
-  <div class="am-u-sm-9" style="background-color:#F1F1F1;padding-left: 0.5rem;
+  <div class="am-u-sm-9" style="background-color:#FFFFFF;padding-left: 0.5rem;
 	padding-right: 0rem;">
 	%
 	include("/gateway/index/guide.btl"){}

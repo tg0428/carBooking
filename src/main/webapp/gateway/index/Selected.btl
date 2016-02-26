@@ -1,8 +1,17 @@
-<section class="am-panel am-panel-primary" style="margin:0px 0px 0px 0px">
-	  <header class="am-panel-hd">
-	    <h3 class="am-panel-title" style="font-size:15px">精选车型</h3>
-	  </header>
-	  <div class="am-panel-bd" style="padding-bottom:2px">
-	    <img src="http://car0.autoimg.cn/upload/2014/3/4/u_20140304190432058-1.jpg" width="200" height="200" />
-	  </div>
-	</section>
+<div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+      <h2 class="am-titlebar-title " data-am-scrollspy="{animation:'fade'}" style="color:#8B1C62">精 选 车 型</h2>
+      <nav class="am-titlebar-nav"><a href="${ctxPath}/carlist.html?pageNum=1" class="">更多 &raquo;</a></nav>
+</div>
+<div style="width:218px;margin:7px auto 0px;">
+		<div class="am-slider am-slider-default" data-am-flexslider>
+		  <ul class="am-slides">
+		  %
+		  		for (car in carlist.source){
+		  			%
+		  				 <li><div class="s-image" style="background-image: url(${car.image_server_url});"></div></li>
+		  			%
+		  		}
+		  %
+		  </ul>
+		</div>	
+</div>

@@ -81,7 +81,7 @@
 
 .more {
 	height: 42px;
-	line-height : 42px;
+	line-height: 42px;
 	padding: 0px 3px 3px 3px;
 	width: 978px;
 	position: relative;
@@ -90,10 +90,31 @@
 }
 
 .t {
-	padding-left : 10px;
+	padding-left: 10px;
 	padding-right: 30px;
 	font-size: 14px;
-	font-weight: bold;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.t1 {
+	margin-right: 6px;
+}
+
+.u1 {
+	border: 1px solid #E1E1E1;
+	margin: 0 auto 2px;
+	height: 251px;
+	position: relative;
+}
+
+.u1 li {
+	padding-left: 6px;
+	font-size:14px;
+}
+
+.s-image {
+	width: 218px;
+	height: 200px;
+	background-size:100% 100%;
 }

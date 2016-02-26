@@ -37,6 +37,8 @@ public class IndexAction {
 		List<Map<String,Object>> notices = ms.getArticleList(3,5);
 		/*获取公司活动列表前五条*/
 		List<Map<String,Object>> acticities = ms.getArticleList(5,5);
+		pager<Map<String,Object>> carlist = ms.GetCarList(1, 5);
+        view.addObject("carlist",carlist);
 		view.addObject("news", news);
 		view.addObject("notices", notices);
 		view.addObject("activities", acticities);

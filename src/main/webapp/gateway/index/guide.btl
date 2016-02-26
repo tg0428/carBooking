@@ -1,12 +1,15 @@
-<section class="am-panel am-panel-primary" style="margin:0px 0px 0px 0px">
-	  <header class="am-panel-hd">
-	    <h3 class="am-panel-title" style="font-size:15px">租车向导</h3>
-	  </header>
-		<ul class="am-list am-list-border">
-  			<li><a href="#" class="am-text-truncate">厦门汽车租赁业受法律制约</a></li>
-  			<li><a href="#" class="am-text-truncate">省时省钱省力 爱车维修五大经验...</a></li>
-  			<li><a href="#" class="am-text-truncate">吉运通新闻</a></li>
-  			<li><a href="#" class="am-text-truncate">租车须掌握的基本行车常识</a></li>
-  			<li><a href="#" class="am-text-truncate">合作加盟</a></li>
+<div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+      <h2 class="am-titlebar-title" data-am-scrollspy="{animation:'fade'}" style="color:#8B1C62">爱 鹭 美 公 告</h2>
+      <nav class="am-titlebar-nav"><a href="products.asp" class="">更多 &raquo;</a></nav>
+</div>
+<div class="u1" style="margin:0 auto 5px;height:251px;width:706px;position:relative;">
+	   <ul class="am-list">
+  			%
+	   		for (notice in notices){
+	   		%
+	   			<li><a href="${ctxPath}/detail.html?type=${notice.article_type}&id=${notice.article_id}" class="am-text-truncate"><span class="t1 am-badge am-badge-success am-radius">${notice.article_id}</span>${notice.article_title}</a></li>
+	   		%
+	   		}
+	   %
 		</ul>
-	</section>
+	</div>

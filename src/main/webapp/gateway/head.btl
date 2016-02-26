@@ -4,10 +4,10 @@
 		<span class="t t-call"><i class="am-icon-phone am-icon-fw"></i>联系电话：0592-5712990</span>
 	</div>
 </div><br>
-<div class="publicNav" id="publicNav" data="二级导航栏">
+<div class="publicNav" id="publicNav" data="二级导航栏" data-am-sticky="{top:0}" style="z-index:10000">
     <div class="publicNav_nav">
         <p><a href="${ctxPath}/index.html" class="currHover">首页</a></p>
-        <p class="hot"><a href="http://www.baidu.com/" class="currHover">在线租车</a></p>
+        <p><a href="" class="currHover">在线租车</a></p>
         <p><a href="${ctxPath}/cardiscount.html?pageNum=1&type=0" class="currHover">特惠车型</a></p>
         <p><a href="${ctxPath}/carlist.html?pageNum=1" class="currHover">车型价格</a></p>
         <p class="new"><a href="${ctxPath}/detail.html?type=1&id=0" class="currHover">公司简介</a></p>

@@ -29,7 +29,7 @@
   									<li><strong>会员价：</strong> <strong style="font-size:15px;color:red">￥${car.leaguer_price}/天</strong></li>
   									<li><font size=2>${car.tips}</font></li>
 								</ul>
-								<button type="button" class="am-btn am-btn-primary am-btn-sm am-round" style="float:right;margin-top:1.5rem">开始预订</button>
+								<button type="button" class="am-btn am-btn-primary am-btn-sm am-round am-animation-slide-left" style="float:right;margin-top:1.5rem">开始预订</button>
 							  </div>
 							</div>
 						</div>

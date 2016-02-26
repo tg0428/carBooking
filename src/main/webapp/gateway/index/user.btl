@@ -14,6 +14,9 @@
 		      <button type="submit" class="am-btn am-btn-success am-btn-sm am-u-sm-centered">登&nbsp;&nbsp;录</button>
 		  </div>
 	  </form>
+	  <button type="button" class="am-btn am-btn-primary am-btn-sm am-u-sm-centered am-animation-scale-down" style="height:80px;margin-top:8px">
+	  			<img src="${ctxPath}/resources/index/images/mianpei_ad.png" width=40 height=40/>&nbsp;&nbsp;简 单 三 步 完 成 租 车
+	  </button>
     </div>
     <div class="am-tab-panel">
       <form class="am-form">

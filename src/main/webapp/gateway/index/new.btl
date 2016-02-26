@@ -1,14 +1,15 @@
-<section class="am-panel am-panel-primary" style="margin:0px 0px 0px 0px">
-	  <header class="am-panel-hd">
-	    <h3 class="am-panel-title" style="font-size:15px">爱鹭美新闻</h3>
-	  </header>
-	   <ul class="am-list am-list-border">
+<div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+      <h2 class="am-titlebar-title " data-am-scrollspy="{animation:'fade'}" style="color:#8B1C62">爱 鹭 美 新 闻</h2>
+      <nav class="am-titlebar-nav"><a href="products.asp" class="">更多 &raquo;</a></nav>
+</div>
+<div class="u1" style="width:218px;">
+	   <ul class="am-list">
 	   %
 	   		for (new in news){
 	   		%
-	   			<li><a href="${ctxPath}/detail.html?type=${new.article_type}&id=${new.article_id}" class="am-text-truncate">${new.article_title}</a></li>
+	   			<li><a href="${ctxPath}/detail.html?type=${new.article_type}&id=${new.article_id}" class="am-text-truncate"><span class="t1 am-badge am-badge-primary am-radius">${new.article_id}</span>${new.article_title}</a></li>
 	   		%
 	   		}
 	   %
 		</ul>	
-	</section>
+	</div>
