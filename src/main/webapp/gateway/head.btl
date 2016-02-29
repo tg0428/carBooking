@@ -7,7 +7,7 @@
 <div class="publicNav" id="publicNav" data="二级导航栏" data-am-sticky="{top:0}" style="z-index:10000">
     <div class="publicNav_nav">
         <p><a href="${ctxPath}/index.html" class="currHover">首页</a></p>
-        <p><a href="" class="currHover">在线租车</a></p>
+        <p><a href="${ctxPath}/rentcar.html" class="currHover">在线租车</a></p>
         <p><a href="${ctxPath}/cardiscount.html?pageNum=1&type=0" class="currHover">特惠车型</a></p>
         <p><a href="${ctxPath}/carlist.html?pageNum=1" class="currHover">车型价格</a></p>
         <p class="new"><a href="${ctxPath}/detail.html?type=1&id=0" class="currHover">公司简介</a></p>
@@ -32,7 +32,7 @@ $(function(){
 		}		
 	} 
 	var currNav;
-	if(navTab('flight.118114.cn')){
+	if(navTab('${ctxPath}/rentcar.html')){
 			currNav=1;$(".currHover").eq(currNav).addClass("hover");
 		}else if(navTab('${ctxPath}/cardiscount.html')){
 			currNav=2;$(".currHover").eq(currNav).addClass("hover");

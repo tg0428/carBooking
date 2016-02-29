@@ -15,7 +15,7 @@
 
 	<!-- 编码过滤器 -->
 	<filter>
-		<filter-name>Character Encoding Filter</filter-name>
+		<filter-name>CharacterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 		<init-param>
 			<description>指定字符编码编码</description>
@@ -25,12 +25,12 @@
 		<init-param>
 			<description>是否强制要求响应包编码与请求包相同，false表示如果响应包设置了自己编码则不强制修改</description>
 			<param-name>forceEncoding</param-name>
-			<param-value>false</param-value>
+			<param-value>true</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>Character Encoding Filter</filter-name>
-		<servlet-name>Dispatcher Servlet</servlet-name>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<servlet-name>/*</servlet-name>
 	</filter-mapping>
 
 	<!-- 请求日志过滤器，调试用 -->

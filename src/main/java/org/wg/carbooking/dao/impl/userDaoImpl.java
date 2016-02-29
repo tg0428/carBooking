@@ -16,13 +16,13 @@ public class userDaoImpl extends baseDao<user> implements userDao {
 
 	@Override
 	public boolean add(user user) {
-		String sql = "insert into `dbo.user` (name,password) values (?,?)";
+		String sql = "insert into `dbo.user` (name,password,phone) values (?,?,?)";
 		int rows;
 		try {
 			if (isExist(user)){
 				return false;
 			}
-			rows = this.getmJdbcTemplate().update(sql, user.getName(),MD5.EncoderByMd5(user.getPassword()));
+			rows = this.getmJdbcTemplate().update(sql, user.getName(),MD5.EncoderByMd5(user.getPassword()),user.getPhone());
 			if (rows != 0){
 				return true;
 			}
@@ -45,7 +45,19 @@ public class userDaoImpl extends baseDao<user> implements userDao {
 	@Override
 	public boolean search(user user) {
 		String sql = "select * from `dbo.user` where name=? and password=?";
-		int rows = this.getmJdbcTemplate().update(sql, user.getName(),user.getPassword());
+		int rows = 0;
+		try {
+			rows = this.getmJdbcTemplate().queryForList(sql, user.getName(),MD5.EncoderByMd5(user.getPassword())).size();
+		} catch (DataAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		if (rows != 0){
 			return true;
@@ -55,7 +67,7 @@ public class userDaoImpl extends baseDao<user> implements userDao {
 	
 	public boolean isExist(user user){
 		String sql = "select * from `dbo.user` where name=?";
-		int rows = this.getmJdbcTemplate().update(sql, user.getName());
+		int rows = this.getmJdbcTemplate().queryForList(sql, user.getName()).size();
 		
 		if (rows != 0){
 			return true;
@@ -73,5 +85,11 @@ public class userDaoImpl extends baseDao<user> implements userDao {
 	public List<Map<String, Object>> queryForUserList() {
 		String sql = "select * from `dbo.user` as A left join `dbo.car` as B on A.book_car_id=B.car_id";
 		return queryForList(sql);
+	}
+
+	@Override
+	public List<Map<String, Object>> queryForInfoList(int userId) {
+		String sql = "select * from `dbo.user` as A right join `dbo.carbook` as B on A.id = B.user_id where A.id = ?";
+		return queryForList(new Object[]{userId}, sql);
 	}
 }

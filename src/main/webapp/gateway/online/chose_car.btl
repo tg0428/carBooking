@@ -5,7 +5,8 @@
 %
 <script type="text/javascript">
 	function chose(id){
-			window.location.href = "${ctxPath}/rentcar.html";
+			$("input[name=carBookId]").val(id);
+			$("#chose").submit();
 		}
 	$(function(){
 		var initPagination = function(){
@@ -22,7 +23,7 @@
 		// 点击分页按钮以后触发的动作
 		function pageselectCallback(page_index, jq) {
 			$("input[name=pageNum]").val(page_index+1);
-			$("#page").attr("action","${ctxPath}/carlist.html");
+			$("#page").attr("action","${ctxPath}/chosecar.html");
 			$("#page").submit();
 			return false;
 		}
@@ -37,8 +38,8 @@
 	<div class="am-g" style="padding:0px 3px 3px 3px;width:978px;position:relative;margin:0 auto 10px;border:1px solid #E1E1E1;">
 		<div class="car-title">
 			<div class="tips">
-				<strong style="font-size:15px;color:#0b7cb7">全部车型</strong> 
-				<font style="font-size:15px;">车型展示<font>
+				<strong style="font-size:15px;color:#0b7cb7">轻松三步，完成租车！</strong> 
+				<font style="font-size:15px;">设定行程/选定车辆/确认订单<font>
 			</div>
 		</div>
 		<hr></hr>
@@ -49,6 +50,9 @@
 	</div>
 	<form action="" method="get" id="page">
 		<input type="hidden" name="pageNum">
+	</form>
+	<form action="${ctxPath}/booking/bookcar" method="post" id="chose">
+		<input type="hidden" name="carBookId">
 	</form>
 	<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
 		<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;

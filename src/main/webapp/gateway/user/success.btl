@@ -1,0 +1,11 @@
+<div data-am-widget="tabs" class="am-tabs am-tabs-d2 am-margin-0" style="border: 1px solid #E1E1E1;border-top:5px solid #E1E1E1;">
+<div class="am-u-lg-7 am-u-sm-7 am-u-sm-centered am-u-lg-centered am-margin-vertical-xs"><img src="${ctxPath}/resources/index/images/personal.png" class="am-circle"></div>
+      <h2 class="am-text-center am-margin-vertical-xs">${session.user.name}</h2>
+      <div class="am-container am-margin-vertical-xs">
+	    <a href="${ctxPath}/detaillist.html" class="am-btn am-btn-warning am-btn-block" style="padding-top:10px;">会员中心</a>
+	  </div>
+	  <div class="am-container am-margin-vertical-xs">
+	    <a href="${ctxPath}/Login/logout" class="am-btn am-btn-warning am-btn-block" style="padding-top:10px;">退出登录</a>
+	  </div>
+    </div>
+</div>

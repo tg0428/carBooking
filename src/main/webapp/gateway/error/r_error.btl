@@ -1,0 +1,55 @@
+%
+	var headContent = {
+		include("/template/head.btl"){}
+		include("/gateway/resources.btl"){}
+		%
+		<script>
+			var second = 3;
+			var t = window.setInterval("desc()",1000); 
+			function desc(){
+					$("#second").html(second+"秒后自动返回首页");
+					second--;
+					if (second < 0){
+						window.clearInterval(t);
+						window.location.href = "${ctxPath}/index.html";
+					}
+				}
+		</script>
+		%
+	};
+	var bodyContent = {
+		include("/gateway/head.btl"){}
+		include("/gateway/index/contact.btl"){}
+%
+<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+  <div class="am-u-sm-12" style="background-color:#FFFFFF;padding-left: 0rem;
+	padding-right: 0rem;">
+	<div class="am-panel am-panel-default">
+    	<div class="am-panel-bd" style="text-align:center;height:250px">
+    		<font size=5>用户名已存在，请更换其他用户名！</font></br><span id="second" style="color:red"></span>
+    	</div>
+	</div>
+  </div>
+</div>
+<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+	<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;
+	padding-right: 0rem;border:1px solid #E1E1E1;">
+	%
+	include("/gateway/index/link.btl"){}
+	%
+	</div>
+</div>
+<div class="am-g" style="width:978px;position:relative;margin:0 auto 10px;">
+	<div class="am-u-sm-12" style="background-color:#F1F1F1;padding-left: 0.5rem;
+	padding-right: 0rem;border:1px solid #E1E1E1;">
+	%
+	include("/gateway/foot.btl"){}
+	%
+	</div>
+</div>
+%	
+	};
+%
+%
+ layout("/template/layout.btl",{head:headContent,body:bodyContent}){}
+%

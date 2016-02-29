@@ -29,4 +29,9 @@ public interface userDao {
 	 * @return
 	 */
 	public List<Map<String,Object>> queryForUserList();
+	
+	/**获取用户租车信息
+	 * @return
+	 */
+	public List<Map<String,Object>> queryForInfoList(int userId);
 }

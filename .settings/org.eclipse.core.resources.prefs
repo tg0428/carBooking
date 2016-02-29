@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/main/java/org/wg/carbooking/controller/IndexAction.java=GBK
+encoding//src/main/java/org/wg/carbooking/controller/IndexController.java=GBK
 encoding//src/main/java/org/wg/carbooking/utils/MD5.java=UTF-8
 encoding//src/main/java/org/wg/carbooking/utils/webGetDate.java=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8

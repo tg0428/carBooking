@@ -2,7 +2,6 @@ package org.wg.carbooking.service;
 
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.stereotype.Service;
 import org.wg.carbooking.model.pager;
 import org.wg.carbooking.vo.admin;
@@ -55,7 +54,7 @@ public interface managerService {
 	 * @param cb
 	 * @return
 	 */
-	public boolean BookCar(carbook cb);
+	public boolean BookCar(carbook carbook);
 	
 	/**获取汽车优惠类型列表
 	 * @return
@@ -99,6 +98,11 @@ public interface managerService {
 	 * @return
 	 */
 	public List<Map<String,Object>> GetUserList();
+	
+	/**获取指定用户信息列表
+	 * @return
+	 */
+	public List<Map<String,Object>> GetUserInfo(int userId);
 	
 	/**获取车辆实体
 	 * @param id

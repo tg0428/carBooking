@@ -24,7 +24,7 @@ public class manageServiceImpl extends baseService implements managerService {
 
 	@Override
 	public boolean Register(user user) {
-		return mUD.search(user);
+		return mUD.add(user);
 	}
 
 	@Override
@@ -43,8 +43,8 @@ public class manageServiceImpl extends baseService implements managerService {
 	}
 
 	@Override
-	public boolean BookCar(carbook cb) {
-		return mCBD.bookCar(cb);
+	public boolean BookCar(carbook carbook) {
+		return mCBD.bookCar(carbook);
 	}
 
 	@Override
@@ -130,6 +130,11 @@ public class manageServiceImpl extends baseService implements managerService {
 	@Override
 	public pager<Map<String, Object>> GetCarList(int pageNum, int pageSize, int type) {
 		return mCD.paginationForCar(pageNum, pageSize, type);
+	}
+
+	@Override
+	public List<Map<String, Object>> GetUserInfo(int userId) {
+		return mUD.queryForInfoList(userId);
 	}
 
 }

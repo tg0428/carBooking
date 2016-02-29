@@ -2,6 +2,56 @@
 	var headContent = {
 		include("/template/head.btl"){}
 		include("/gateway/resources.btl"){}
+		%
+		<script>
+			function register(){
+				var values = $("#rf").serializeArray();
+				var psw = $("#psw").val();
+				var r_psw = $("#r_psw").val();  
+				var count = 0;
+				$.each(values,function(index,value){
+					if (value.value == ""){
+						count++;
+					}
+				});
+				if (count == 0 && psw != r_psw){
+					alert("两次密码不一致");
+				} else if (count == 0 && psw == r_psw) {
+					$.post($("#rf").attr("action"),$("#rf").serialize(),function(data){
+						if (data.msg == "true"){
+								$.get("${ctxPath}/success.html",function(view){
+									$("#personal").html(view);
+								});
+							} else {
+								window.location.href = "${ctxPath}/nerror.html";
+							}
+					});
+				}
+			}
+			function login(){
+				var values = $("#lf").serializeArray();
+				var count = 0;
+				$.each(values,function(index,value){
+					if (value.value == ""){
+						count++;
+					}
+				});
+				if (count == 2 || count == 1){
+					return;
+				} else {
+					$.post($("#lf").attr("action"),$("#lf").serialize(),function(data){
+							if (data.msg == "true"){
+								$.get("${ctxPath}/success.html",function(view){
+									$("#personal").html(view);
+								});
+							} else {
+								window.location.href = "${ctxPath}/error.html";
+							}
+					});
+				}
+			}
+		</script>
+		%
 	};
 	var bodyContent = {
 		include("/gateway/head.btl"){}
@@ -14,10 +64,10 @@
 	include("/gateway/index/recommend.btl"){}
 	%
   </div>
-  <div class="am-u-sm-4" style="padding-left: 1rem;
+  <div class="am-u-sm-4" id="personal" style="padding-left: 1rem;
 	padding-right: 0rem;">
 	%
-	include("/gateway/index/user.btl"){}
+	include(path){}
 	%
   </div>
 </div>

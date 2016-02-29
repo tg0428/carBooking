@@ -6,26 +6,26 @@
 
   <div class="am-tabs-bd">
     <div class="am-tab-panel am-active">
-      <form class="am-form">
-		  <input type="text" class="am-form-field am-radius" placeholder="账号" /><br>
-		  <input type="password" class="am-form-field am-radius" placeholder="密码" /><br>
+      <form id="lf" class="am-form" action="${ctxPath}/Login/login" method="post">
+		  <input type="text" name="name" id="name" class="am-form-field am-radius" placeholder="账号" required/><br>
+		  <input type="password" name="password" id="password" class="am-form-field am-radius" placeholder="密码" required/><br>
 	
 		  <div class="am-cf">
-		      <button type="submit" class="am-btn am-btn-success am-btn-sm am-u-sm-centered">登&nbsp;&nbsp;录</button>
+		      <button type="button" onclick="login()" class="am-btn am-btn-success am-btn-sm am-u-sm-centered">登&nbsp;&nbsp;录</button>
 		  </div>
 	  </form>
-	  <button type="button" class="am-btn am-btn-primary am-btn-sm am-u-sm-centered am-animation-scale-down" style="height:80px;margin-top:8px">
+	  <button type="button" class="am-btn am-btn-primary am-btn-sm am-u-sm-centered am-animation-scale-down" style="height:72px;margin-top:8px">
 	  			<img src="${ctxPath}/resources/index/images/mianpei_ad.png" width=40 height=40/>&nbsp;&nbsp;简 单 三 步 完 成 租 车
 	  </button>
     </div>
     <div class="am-tab-panel">
-      <form class="am-form">
-		  <input type="text" class="am-form-field am-radius" placeholder="账号" style="margin:5px 0px 10px auto"/>
-		  <input type="password" class="am-form-field am-radius" placeholder="密码" style="margin-bottom:10px"/>
-		  <input type="password" class="am-form-field am-radius" placeholder="确认密码" style="margin-bottom:10px"/>
-		  <input type="email" class="am-form-field am-radius" placeholder="电子邮箱" style="margin-bottom:10px"/>
+      <form id="rf" class="am-form" action="${ctxPath}/Login/register" method="post">
+		  <input type="text" name="name" class="am-form-field am-radius" placeholder="账号" style="margin:5px 0px 10px auto" required/>
+		  <input type="password" name="password" id="psw" class="am-form-field am-radius" placeholder="密码" style="margin-bottom:10px" required/>
+		  <input type="password" name="r_password" id="r_psw" class="am-form-field am-radius" placeholder="确认密码" style="margin-bottom:10px" required/>
+		  <input type="text" name="phone" class="am-form-field am-radius" placeholder="手机号" style="margin-bottom:10px" required/>
 		  <div class="am-cf">
-		      <button type="submit" class="am-btn am-btn-success am-btn-sm am-u-sm-centered">注&nbsp;&nbsp;册</button>
+		      <button type="button" onclick="register()" class="am-btn am-btn-success am-btn-sm am-u-sm-centered">注&nbsp;&nbsp;册</button>
 		  </div>
 	  </form>
     </div>

@@ -2,7 +2,7 @@ package org.wg.carbooking.controller;
 
 import java.util.List;
 import java.util.Map;
-
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,12 +14,13 @@ import org.wg.carbooking.service.managerService;
 import org.wg.carbooking.utils.constant;
 import org.wg.carbooking.vo.article;
 import org.wg.carbooking.vo.typeOfCar;
+import org.wg.carbooking.vo.user;
 
 /**
  * test beetl and spring mvc controller
  * */
 @Controller
-public class IndexAction {
+public class IndexController {
 	
 	private managerService ms;
 	
@@ -29,7 +30,7 @@ public class IndexAction {
 	}
 	
 	@RequestMapping("/index.html")
-	public ModelAndView index() {
+	public ModelAndView index(HttpSession session) throws NoSuchMethodException, SecurityException {
 		ModelAndView view = new ModelAndView();
 		/*获取公司新闻列表前五条*/
 		List<Map<String,Object>> news = ms.getArticleList(4,5);
@@ -42,6 +43,11 @@ public class IndexAction {
 		view.addObject("news", news);
 		view.addObject("notices", notices);
 		view.addObject("activities", acticities);
+		if (session.getAttribute("user") != null && ms.Login((user)session.getAttribute("user"))){
+			view.addObject("path", "/gateway/user/success.btl");
+		} else {
+			view.addObject("path", "/gateway/index/user.btl");
+		}
 		view.setViewName("/gateway/index/index");
 		return view;
 		
@@ -81,6 +87,15 @@ public class IndexAction {
          return view;
     } 
 	
+	@RequestMapping(value="/chosecar.html", method = RequestMethod.GET)
+    public ModelAndView chosecar(int pageNum) {        
+		 ModelAndView view = new ModelAndView(); 
+		 pager<Map<String,Object>> carlist = ms.GetCarList(pageNum, constant.DEFAULT_PAGE_SIZE);
+         view.addObject("carlist",carlist);
+         view.setViewName("/gateway/online/chose_car");
+         return view;
+    } 
+	
 	@RequestMapping(value="/cardiscount.html", method = RequestMethod.GET)
     public ModelAndView cardiscount(int pageNum, int type) {        
 		 ModelAndView view = new ModelAndView(); 
@@ -117,5 +132,70 @@ public class IndexAction {
          model.addAttribute("a");
          return "/admin/login/login";
     } 
-
+	
+	@RequestMapping(value="/rentcar.html")
+    public ModelAndView rent() {   
+		 ModelAndView view = new ModelAndView(); 
+		 view.setViewName("/gateway/online/rent_car");
+         return view;
+    } 
+	
+	@RequestMapping(value="/error.html")
+    public ModelAndView error() {   
+		 ModelAndView view = new ModelAndView(); 
+		 view.setViewName("/gateway/error/error");
+         return view;
+    } 
+	
+	@RequestMapping(value="/nerror.html")
+    public ModelAndView nerror() {   
+		 ModelAndView view = new ModelAndView(); 
+		 view.setViewName("/gateway/error/r_error");
+         return view;
+    }
+	
+	@RequestMapping(value="/success.html")
+    public ModelAndView success() {   
+		 ModelAndView view = new ModelAndView(); 
+		 view.setViewName("/gateway/user/success");
+         return view;
+    }
+	
+	@RequestMapping(value="/user.html")
+    public ModelAndView user() {   
+		 ModelAndView view = new ModelAndView(); 
+		 view.setViewName("/gateway/index/user");
+         return view;
+    }
+	
+	@RequestMapping(value="/lerror.html")
+    public ModelAndView lerror() {   
+		 ModelAndView view = new ModelAndView(); 
+		 view.setViewName("/gateway/error/l_error");
+         return view;
+    }
+	
+	@RequestMapping(value="/perinfo.html")
+    public ModelAndView perInfo() {   
+		 ModelAndView view = new ModelAndView();
+		 long timeStamp = System.currentTimeMillis();
+		 view.setViewName("/gateway/user/perinfo");
+		 view.addObject("bookId",timeStamp);
+         return view;
+    }
+	
+	@RequestMapping(value="/detaillist.html")
+    public ModelAndView detailList(HttpSession session) {   
+		 ModelAndView view = new ModelAndView();
+		 user user = (user)session.getAttribute("user");
+		 if (user != null){
+			 int userId = ms.GetUserBean(user).getId();
+			 user userForView = new user(ms.GetUserInfo(userId), userId, user.getName(), "", ms.GetUserBean(user).getPhone());
+			 view.addObject("infos",userForView);
+			 view.setViewName("/gateway/user/detaillist");
+		 } else {
+			 view.setViewName("/gateway/error/l_error");
+		 }
+         return view;
+    }
 }

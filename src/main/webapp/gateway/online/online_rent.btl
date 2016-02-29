@@ -1,0 +1,52 @@
+<div class="am-panel am-panel-secondary">
+  <div class="am-panel-hd">轻松三步，完成租车！</div>
+  <div class="am-panel-bd">
+   	<form class="am-form am-form-horizontal" action="${ctxPath}/booking/settime" method="post">
+		<div class="am-form-group">
+		    <label for="doc-ipt-3" class="am-u-sm-3 am-form-label" style="font-size:14px">取还车城市</label>
+		    <div class="am-u-sm-9">
+				<input type="text" class="am-form-field am-round" value="厦门" readonly/>
+			</div>
+		  </div>
+		<div class="am-form-group">
+		    <label for="doc-ipt-3" class="am-u-sm-3 am-form-label" style="font-size:14px">取还车门店</label>
+		    <div class="am-u-sm-9">
+				<input type="text" class="am-form-field am-round" value="爱鹭美汽车租赁公司"  readonly/>
+			</div>
+		 </div>
+		<div class="am-form-group">
+		    <label for="doc-ipt-3" class="am-u-sm-3 am-form-label" style="font-size:14px">取车时间</label>
+		    <div class="am-u-sm-9">
+				<input type="text" id="pu_car_time" name="pu_car_time" class="am-form-field am-round" placeholder="*爱鹭美建议您13点提车最优惠" required/>
+			</div>
+		 </div>
+		 <div class="am-form-group">
+		    <label for="doc-ipt-3" class="am-u-sm-3 am-form-label" style="font-size:14px">还车时间</label>
+		    <div class="am-u-sm-9">
+				<input type="text" id="gb_car_time" name="gb_car_time" class="am-form-field am-round" placeholder="*爱鹭美建议您19点还车最优惠" required/>
+			</div>
+		 </div>
+		 <div class="am-form-group">
+		    <div class="am-u-sm-10 am-u-sm-offset-9">
+		      <button type="submit" class="am-btn am-btn-success">下一步</button>
+		    </div>
+		  </div>
+ 	</form>
+  </div>
+</div>
+<script>
+$(function(){
+	jeDate({
+	    		dateCell:"#pu_car_time",
+	    		format:"YYYY-MM-DD hh:mm:ss",
+	   			isTime:true, 
+	    		minDate:"2014-09-19 00:00:00"
+			});
+	jeDate({
+	    		dateCell:"#gb_car_time",
+	    		format:"YYYY-MM-DD hh:mm:ss",
+	   			isTime:true, 
+	    		minDate:"2014-09-19 00:00:00"
+			});
+})
+</script>

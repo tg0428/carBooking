@@ -8,5 +8,5 @@ public interface carBookDao {
 	 * @param cb carbook对象
 	 * @return
 	 */
-	public boolean bookCar(carbook cb);
+	public boolean bookCar(carbook carbook);
 }
