@@ -6,17 +6,19 @@
 		<script>
 			function register(){
 				var values = $("#rf").serializeArray();
+				var phone = $("input[name=phone]").val();
 				var psw = $("#psw").val();
-				var r_psw = $("#r_psw").val();  
+				var r_psw = $("#r_psw").val(); 
+				var reg = /^0?1[3|4|5|8][0-9]\d{8}$/; 
 				var count = 0;
 				$.each(values,function(index,value){
 					if (value.value == ""){
 						count++;
 					}
 				});
-				if (count == 0 && psw != r_psw){
+				if (count == 0 && psw != r_psw && psw.length < 7){
 					alert("两次密码不一致");
-				} else if (count == 0 && psw == r_psw) {
+				} else if (count == 0 && psw == r_psw && psw.length < 7 && reg.test(phone)) {
 					$.post($("#rf").attr("action"),$("#rf").serialize(),function(data){
 						if (data.msg == "true"){
 								$.get("${ctxPath}/success.html",function(view){
@@ -26,6 +28,10 @@
 								window.location.href = "${ctxPath}/nerror.html";
 							}
 					});
+				} else if (count == 0 && psw.length > 6) {
+					alert("密码长度超过6位");
+				} else if (count == 0 && !reg.test(phone)){
+					alert("手机号码格式非法");
 				}
 			}
 			function login(){

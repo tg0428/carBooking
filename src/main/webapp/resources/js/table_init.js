@@ -87,8 +87,8 @@ var init = {
 			        align: 'left',
 			        valign: 'top'
 			    }, {
-			        field: 'car_name',
-			        title: '预定车辆名称',
+			        field: 'book_car_id',
+			        title: '预定车辆编号',
 			        align: 'left',
 			        valign: 'top'
 			    }, {

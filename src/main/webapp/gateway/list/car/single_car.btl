@@ -8,17 +8,18 @@
 			    		<div class="am-panel-bd">
 			    			<div class="am-g">
 							  <div class="am-u-sm-4">
-							  	<img src="${car.image_server_url!"/carBooking/resources/index/images/150-100.gif"}" 
-							  			width=150 height=155 style="border:1px solid #E1E1E1;padding:2px 2px 2px 2px">
+							  <div id="gallery1" class="gallery">
+							  	<a href="${car.image_server_url!"/carBooking/resources/index/images/150-100.gif"}" title="${car.car_name}"><img src="${car.image_server_url!"/carBooking/resources/index/images/150-100.gif"}" 
+							  			width=150 height=155 style="border:1px solid #E1E1E1;padding:2px 2px 2px 2px"></a>
 							  </div>
-							  <div class="am-u-sm-8" style="padding-left:2.5rem">
+							  </div>
+							  <div class="am-u-sm-8" style="padding-left:2rem">
 							  	<ul class="car-list">
-  									<li><strong>车辆名称：</strong> <font size=2>${car.car_name}</font></li>
-  									<li><strong>车辆编号：</strong> <font size=2>${car.car_id}</font></li>
+  									<li><strong>车辆名称：</strong> <font size=2>${car.car_name}</font>&nbsp;&nbsp;&nbsp;<strong>车辆编号：</strong> <font size=2>${car.car_id}</font></li>
   									%
   										if (strutil.length(car.car_detail) > 70){
   										%
-  										<li><strong>车况信息：</strong> <font size=2>${strutil.subStringTo(car.car_detail,0,70)}....<a href="#">查看更多</a></font></li>
+  										<li><strong>车况信息：</strong> <font size=2>${strutil.subStringTo(car.car_detail,0,70)}....<a href="javascript:alert('${car.car_detail}')">查看更多</a></font></li>
   										%
   										} else {
   										%

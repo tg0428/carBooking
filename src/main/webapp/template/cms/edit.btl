@@ -14,30 +14,10 @@
     	<i class="am-icon-calendar"></i>
   		<input type="text" id="time" class="am-form-field am-radius" placeholder="点击选择日期" value="" required readonly/>
   	</div>
-  	<p><button class="am-btn am-btn-primary am-animation-scale-down" id="publish"></button></p>
+  	<p><button class="am-btn am-btn-primary am-animation-scale-down" id="publish" onclick="publishArticle()"></button></p>
  </div>
-<script type="text/javascript">
-        var ue = new baidu.editor.ui.Editor();
-        ue.render("myEditor");
-        
-        var mUeditor = {
-        	insert : function(row){
-        		ue.ready(function(){
-        			ue.execCommand('insertHtml', row.article_content);
-        		});
-        	}
-        }  
-         
-        $(function(){
-	        jeDate({
-	    		dateCell:"#time",
-	    		format:"YYYY年MM月DD日 hh:mm:ss",
-	   			isTime:true, 
-	    		minDate:"2014-09-19 00:00:00"
-			})
-			$("#publish").click(function(){
-				var content = ue.getContent();
-				publish.publishArticle(content);
-			});
-        })
+ <script type="text/javascript" src="${ctxPath}/resources/js/init_jedate.js"></script>
+<script>
+		ue = new baidu.editor.ui.Editor();
+	    ue.render("myEditor");
 </script>

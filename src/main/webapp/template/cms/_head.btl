@@ -11,4 +11,5 @@
 <script type="text/javascript" charset="utf-8" src="${ctxPath}/resources/jNotify/js/jNotify.jquery.js"></script>
 <script type="text/javascript" charset="utf-8" src="${ctxPath}/resources/js/utils.js"></script>
 <script type="text/javascript" charset="utf-8" src="${ctxPath}/resources/js/publish.js"></script>
-<script src="${ctxPath}/resources/jedate/jedate.js"></script>
+<script type="text/javascript" charset="utf-8" src="${ctxPath}/resources/jedate/jedate.js"></script>
+

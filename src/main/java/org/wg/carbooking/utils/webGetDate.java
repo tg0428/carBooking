@@ -10,4 +10,9 @@ public class webGetDate {
 		SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		return df.format(date);
 	}
+	
+	public static long systemCurrentTimeMills(){
+		long timeStamp = System.currentTimeMillis();
+		return timeStamp;
+	}
 }

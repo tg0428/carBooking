@@ -1,4 +1,4 @@
-<img width=313 height=250 src="http://51xmzc.com/images/21130153233.jpg">
+<img width=313 height=250 src="${ctxPath}/resources/index/images/left.jpg">
 <section class="am-panel am-panel-success" style="margin:5px 0px 0px 0px">
 	  <header class="am-panel-hd">
 	    <h3 class="am-panel-title" style="font-size:15px">最近发布</h3>

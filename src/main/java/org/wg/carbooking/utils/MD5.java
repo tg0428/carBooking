@@ -20,6 +20,10 @@ public class MD5 {
 	 */
 	public static String EncoderByMd5(String str)
 			throws NoSuchAlgorithmException, UnsupportedEncodingException {
+		
+		if (str == null){
+			return "";
+		}
 
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
 		BASE64Encoder base64en = new BASE64Encoder();

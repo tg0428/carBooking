@@ -14,9 +14,9 @@
 		      <button type="button" onclick="login()" class="am-btn am-btn-success am-btn-sm am-u-sm-centered">登&nbsp;&nbsp;录</button>
 		  </div>
 	  </form>
-	  <button type="button" class="am-btn am-btn-primary am-btn-sm am-u-sm-centered am-animation-scale-down" style="height:72px;margin-top:8px">
+	  <a href="${ctxPath}/rentcar.html"><button type="button" class="am-btn am-btn-primary am-btn-sm am-u-sm-centered am-animation-scale-down" style="height:72px;margin-top:8px">
 	  			<img src="${ctxPath}/resources/index/images/mianpei_ad.png" width=40 height=40/>&nbsp;&nbsp;简 单 三 步 完 成 租 车
-	  </button>
+	  </button></a>
     </div>
     <div class="am-tab-panel">
       <form id="rf" class="am-form" action="${ctxPath}/Login/register" method="post">

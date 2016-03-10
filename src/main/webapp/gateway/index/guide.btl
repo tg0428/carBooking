@@ -1,6 +1,6 @@
 <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
       <h2 class="am-titlebar-title" data-am-scrollspy="{animation:'fade'}" style="color:#8B1C62">爱 鹭 美 公 告</h2>
-      <nav class="am-titlebar-nav"><a href="products.asp" class="">更多 &raquo;</a></nav>
+      <nav class="am-titlebar-nav"><a href="" class="">更多 &raquo;</a></nav>
 </div>
 <div class="u1" style="margin:0 auto 5px;height:251px;width:706px;position:relative;">
 	   <ul class="am-list">

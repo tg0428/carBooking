@@ -27,6 +27,7 @@
 			$("#page").submit();
 			return false;
 		}
+		$('#gallery1 a').rebox();
 	});
 </script>
 %
@@ -39,13 +40,19 @@
 		<div class="car-title">
 			<div class="tips">
 				<strong style="font-size:15px;color:#0b7cb7">轻松三步，完成租车！</strong> 
-				<font style="font-size:15px;">设定行程/选定车辆/确认订单<font>
+				<font style="font-size:15px;">
+					设定行程&nbsp;&nbsp;/&nbsp;&nbsp;<span class="am-badge am-badge-primary am-radius am-text-sm">选定车辆</span>&nbsp;&nbsp;/&nbsp;&nbsp;确认订单
+				<font>
 			</div>
 		</div>
 		<hr></hr>
+		<div>
+			<div id="gallery1" class="gallery">
 		%
 		include("/gateway/list/car/single_car.btl"){}
 		%
+			</div>
+		</div>
 		<div id="News-Pagination" class="msdn"></div>
 	</div>
 	<form action="" method="get" id="page">

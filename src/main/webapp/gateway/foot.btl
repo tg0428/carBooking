@@ -1,1 +1,13 @@
-<p style="text-align:center">页脚</p>
+<p style="text-align:center">
+	<center style="font-size:12px;margin-top:20px">
+		<a href="${ctxPath}/index.html">首&nbsp;&nbsp;页</a>&nbsp;|
+		<a href="${ctxPath}/rentcar.html">&nbsp;在线租车&nbsp;</a>|&nbsp;
+		<a href="${ctxPath}/cardiscount.html?pageNum=1&type=0">特惠车型&nbsp;</a>|&nbsp;
+		<a href="${ctxPath}/carlist.html?pageNum=1">车型展示&nbsp;</a>|&nbsp;
+		<a href="${ctxPath}/detail.html?type=1&id=0">公司简介&nbsp;</a>|&nbsp;
+		<a href="${ctxPath}/detail.html?type=2&id=0">帮助中心&nbsp;</a>
+	</center>
+	<center style="font-size:12px;margin-top:5px;margin-bottom:20px">
+		<p>Copyright@ www.baiduzc.com 爱鹭美汽车租赁公司 All Rights Reserved.</p>
+	</center>
+</p>

@@ -58,8 +58,8 @@
 					  			<td>${bill.gb_car_time}</td>
 					  			<td>${bill.book_car_id}</td>
 					  			<td>${bill.create_time}</td>
-					  			<td>${bill.phone}</td>
-					  			<td><a href="">点击查看</a></td>
+					  			<td>${bill.contact}</td>
+					  			<td><a href="javascript:alert('${bill.tips}')">点击查看</a></td>
 					  		</tr>
 	    				%
 	    			}

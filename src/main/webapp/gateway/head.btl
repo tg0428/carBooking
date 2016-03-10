@@ -4,7 +4,7 @@
 		<span class="t t-call"><i class="am-icon-phone am-icon-fw"></i>联系电话：0592-5712990</span>
 	</div>
 </div><br>
-<div class="publicNav" id="publicNav" data="二级导航栏" data-am-sticky="{top:0}" style="z-index:10000">
+<div class="publicNav" id="publicNav" data="二级导航栏" data-am-sticky="{top:0}" style="z-index:500">
     <div class="publicNav_nav">
         <p><a href="${ctxPath}/index.html" class="currHover">首页</a></p>
         <p><a href="${ctxPath}/rentcar.html" class="currHover">在线租车</a></p>

@@ -25,7 +25,7 @@ public interface userDao {
 	 */
 	public user queryForUserBean(user user);
 	
-	/**查询用户列表
+	/**获取用户列表
 	 * @return
 	 */
 	public List<Map<String,Object>> queryForUserList();

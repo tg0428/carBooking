@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.wg.carbooking.model.pager;
 import org.wg.carbooking.service.managerService;
 import org.wg.carbooking.utils.constant;
+import org.wg.carbooking.utils.webGetDate;
 import org.wg.carbooking.vo.article;
 import org.wg.carbooking.vo.typeOfCar;
 import org.wg.carbooking.vo.user;
@@ -30,7 +31,7 @@ public class IndexController {
 	}
 	
 	@RequestMapping("/index.html")
-	public ModelAndView index(HttpSession session) throws NoSuchMethodException, SecurityException {
+	public ModelAndView index(HttpSession session) {
 		ModelAndView view = new ModelAndView();
 		/*获取公司新闻列表前五条*/
 		List<Map<String,Object>> news = ms.getArticleList(4,5);
@@ -43,8 +44,12 @@ public class IndexController {
 		view.addObject("news", news);
 		view.addObject("notices", notices);
 		view.addObject("activities", acticities);
-		if (session.getAttribute("user") != null && ms.Login((user)session.getAttribute("user"))){
-			view.addObject("path", "/gateway/user/success.btl");
+		if (session.getAttribute("user") != null){
+			if (ms.Login((user)session.getAttribute("user"))){
+				view.addObject("path", "/gateway/user/success.btl");
+			} else {
+				view.addObject("path", "/gateway/index/user.btl");
+			}
 		} else {
 			view.addObject("path", "/gateway/index/user.btl");
 		}
@@ -176,11 +181,18 @@ public class IndexController {
     }
 	
 	@RequestMapping(value="/perinfo.html")
-    public ModelAndView perInfo() {   
+    public ModelAndView perInfo(long a) {   
 		 ModelAndView view = new ModelAndView();
-		 long timeStamp = System.currentTimeMillis();
-		 view.setViewName("/gateway/user/perinfo");
-		 view.addObject("bookId",timeStamp);
+		 System.out.println("页面传值 ： "+a);
+		 System.out.println("实际值 : "+webGetDate.systemCurrentTimeMills());
+		 System.out.println("相差 ： "+Math.abs(a - webGetDate.systemCurrentTimeMills()));
+		 if (Math.abs(a - webGetDate.systemCurrentTimeMills()) < 300){
+			 view.setViewName("/gateway/user/perinfo");
+			 view.addObject("bookId",webGetDate.systemCurrentTimeMills());
+		 } else {
+			 view.setViewName("/gateway/error/normal_error");
+			 view.addObject("msg","页面已超时，请重新预定车辆");
+		 }
          return view;
     }
 	

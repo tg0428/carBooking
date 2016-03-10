@@ -10,7 +10,7 @@ var admin = {
 						$("#article_id").val(data[0].article_id);
 						$("#title").val(data[0].article_title);
 						$("#time").val(data[0].article_time);
-						mUeditor.insert(data[0]);
+						admin.insert(data[0]);
 					});
 				});
 			},
@@ -27,7 +27,7 @@ var admin = {
 						$("#article_id").val(data[0].article_id);
 						$("#title").val(data[0].article_title);
 						$("#time").val(data[0].article_time);
-						mUeditor.insert(data[0]);
+						admin.insert(data[0]);
 					});
 				});
 			},
@@ -168,8 +168,17 @@ var admin = {
 				o.keydown(function(e) {  
 			        admin.digitInput($(this), e);  
 			    }); 
-			}
+			},
+			insert : function(row){
+	    		ue.ready(function(){
+	    			ue.execCommand('insertHtml', row.article_content);
+	    		});
+	    	}
 	}
+function publishArticle(){
+	var content = ue.getContent();
+	publish.publishArticle(content);
+}
 $(function(){
     admin.summary();
     admin.activity();

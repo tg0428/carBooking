@@ -83,7 +83,7 @@ public class userDaoImpl extends baseDao<user> implements userDao {
 
 	@Override
 	public List<Map<String, Object>> queryForUserList() {
-		String sql = "select * from `dbo.user` as A left join `dbo.car` as B on A.book_car_id=B.car_id";
+		String sql = "select * from `dbo.user` as A left join `dbo.carbook` as B on A.id=B.user_id";
 		return queryForList(sql);
 	}
 

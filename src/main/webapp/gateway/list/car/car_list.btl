@@ -26,6 +26,7 @@
 			$("#page").submit();
 			return false;
 		}
+		$('#gallery1 a').rebox();
 	});
 </script>
 %
@@ -42,9 +43,12 @@
 			</div>
 		</div>
 		<hr></hr>
+		<div>
+			
 		%
 		include("/gateway/list/car/single_car.btl"){}
 		%
+		</div>
 		<div id="News-Pagination" class="msdn"></div>
 	</div>
 	<form action="" method="get" id="page">

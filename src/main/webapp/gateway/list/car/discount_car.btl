@@ -8,8 +8,8 @@
 			    		<div class="am-panel-bd">
 			    			<div class="am-g">
 							  <div class="am-u-sm-4">
-							  	<img src="${car.image_server_url!"/carBooking/resources/index/images/150-100.gif"}" 
-							  			width=200 height=170 style="float:right;border:1px solid #E1E1E1;padding:2px 2px 2px 2px">
+							  	<a href="${car.image_server_url!"/carBooking/resources/index/images/150-100.gif"}" title="${car.car_name}"><img src="${car.image_server_url!"/carBooking/resources/index/images/150-100.gif"}" 
+							  			width=200 height=170 style="float:right;border:1px solid #E1E1E1;padding:2px 2px 2px 2px"></a>
 							  </div>
 							  <div class="am-u-sm-8" style="padding-left:2.5rem">
 							  	<ul class="car-list">

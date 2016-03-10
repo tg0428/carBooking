@@ -1,6 +1,5 @@
 <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
       <h2 class="am-titlebar-title " data-am-scrollspy="{animation:'fade'}" style="color:#8B1C62">租 车 指 南</h2>
-      <nav class="am-titlebar-nav"><a href="products.asp" class="">更多 &raquo;</a></nav>
 </div>
 <div class="u1" style="width:218px;">
 	<div style="height:40px">
@@ -11,11 +10,11 @@
 		</ol>
 	</div>
 	<div class="am-btn-group-stacked">
-		<button type="button" class="am-btn  am-btn-primary am-btn-xl" style="width:218px;height:70px">
+		<a href="${ctxPath}/rentcar.html"><button type="button" class="am-btn  am-btn-primary am-btn-xl" style="width:218px;height:70px">
 		<font size=2><i class="am-icon-clock-o am-icon-fw"></i>&nbsp;&nbsp;设定取还车城市·门店·时间<font></button>
 		<button type="button" class="am-btn am-btn-success am-btn-xl" style="width:218px;height:70px">
 		<font size=2><i class="am-icon-car am-icon-fw"></i>&nbsp;&nbsp;选定车型<font></button>
 		<button type="button" class="am-btn am-btn-warning am-btn-xl" style="width:218px;height:70px">
-		<font size=2><i class="am-icon-check am-icon-fw"></i>&nbsp;&nbsp;完成租车<font></button>
+		<font size=2><i class="am-icon-check am-icon-fw"></i>&nbsp;&nbsp;完成租车<font></button></a>
 	</div>
 </div>

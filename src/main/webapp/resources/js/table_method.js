@@ -136,7 +136,7 @@ var table_method = {
 				$("#title").val(row.article_title);
 				$("#time").val(row.article_time);
 				$("#priority").val(row.article_priority);
-				mUeditor.insert(row);
+				admin.insert(row);
 			});
 		}
 }
