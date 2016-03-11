@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-02-02 21:33:16
+Date: 2016-03-11 16:32:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,10 +36,11 @@ CREATE TABLE `dbo.article` (
   `article_content` text COMMENT '文章内容',
   `article_time` varchar(255) DEFAULT NULL COMMENT '文章发布时间',
   `article_type` int(2) DEFAULT NULL,
+  `article_priority` int(3) unsigned zerofill NOT NULL DEFAULT '000',
   PRIMARY KEY (`article_id`),
   KEY `article2type` (`article_type`),
   CONSTRAINT `article2type` FOREIGN KEY (`article_type`) REFERENCES `dbo.typeofarticle` (`article_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dbo.car
@@ -58,7 +59,28 @@ CREATE TABLE `dbo.car` (
   PRIMARY KEY (`car_id`),
   KEY `car2type` (`car_type`),
   CONSTRAINT `car2type` FOREIGN KEY (`car_type`) REFERENCES `dbo.typeofcar` (`type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for dbo.carbook
+-- ----------------------------
+DROP TABLE IF EXISTS `dbo.carbook`;
+CREATE TABLE `dbo.carbook` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `pu_car_time` varchar(30) DEFAULT NULL,
+  `gb_car_time` varchar(30) DEFAULT NULL,
+  `book_car_id` int(3) DEFAULT NULL,
+  `book_num` varchar(20) DEFAULT NULL,
+  `user_id` int(3) NOT NULL,
+  `create_time` varchar(30) DEFAULT NULL,
+  `contact` varchar(20) DEFAULT NULL,
+  `tips` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `car_id` (`book_car_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `car_id` FOREIGN KEY (`book_car_id`) REFERENCES `dbo.car` (`car_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `dbo.user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dbo.typeofarticle
@@ -78,7 +100,7 @@ CREATE TABLE `dbo.typeofcar` (
   `type_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '汽车优惠类型id',
   `type_detail` varchar(20) NOT NULL COMMENT '汽车优惠类型详情',
   PRIMARY KEY (`type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dbo.user
@@ -87,13 +109,7 @@ DROP TABLE IF EXISTS `dbo.user`;
 CREATE TABLE `dbo.user` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
   `name` varchar(10) NOT NULL COMMENT '用户名',
-  `password` varchar(10) NOT NULL COMMENT '密码',
+  `password` varchar(30) NOT NULL COMMENT '密码',
   `phone` varchar(20) NOT NULL COMMENT '联系方式',
-  `pu_car_time` varchar(30) DEFAULT NULL COMMENT '取车日期',
-  `gb_car_time` varchar(30) DEFAULT NULL COMMENT '还车日期',
-  `book_car_id` int(3) DEFAULT NULL COMMENT '预定车辆id',
-  `tips` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user2car` (`book_car_id`),
-  CONSTRAINT `user2car` FOREIGN KEY (`book_car_id`) REFERENCES `dbo.car` (`car_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;

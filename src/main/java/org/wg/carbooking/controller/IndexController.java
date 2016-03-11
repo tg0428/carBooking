@@ -65,7 +65,9 @@ public class IndexController {
 		article bean = null;
 		if (id == 0) {
 			List<Map<String,Object>> al = ms.getArticleList(type);
-			bean = ms.GetArticle((int)al.get(0).get("article_type"),(int)al.get(0).get("article_id"));
+			if (al.size() != 0){
+				bean = ms.GetArticle((int)al.get(0).get("article_type"),(int)al.get(0).get("article_id"));
+			}
 		} else {
 			bean = ms.GetArticle(type, id);
 		}
@@ -107,8 +109,10 @@ public class IndexController {
 		 typeOfCar discount = null;
 		 List<typeOfCar> discounts = ms.GetTypeOfCar();
 		 if (type == 0){
-			 type = discounts.get(0).getType_id();
-			 discount = discounts.get(0);
+			 if (discounts.size() != 0){
+				 type = discounts.get(0).getType_id();
+				 discount = discounts.get(0);
+			 } 
 		 } else {
 			 for (typeOfCar typeOfCar : discounts) {
 				if (typeOfCar.getType_id() == type){

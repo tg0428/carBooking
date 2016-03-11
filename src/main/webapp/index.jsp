@@ -1,3 +1,4 @@
+<%@page import="java.lang.ProcessBuilder.Redirect"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,10 +13,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div id="myEditor" style="height:400px"></div>
-<script type="text/javascript">
-        var ue = new baidu.editor.ui.Editor();
-        ue.render("myEditor");   //这里填写要改变为编辑器的控件id
-</script>
+<%response.sendRedirect("/carBooking/index.html");%>
 </body>
 </html>
